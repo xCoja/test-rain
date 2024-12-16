@@ -54,7 +54,7 @@ body, html {
 }
 
 .txtt {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -64,7 +64,7 @@ body, html {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,7 +73,7 @@ body, html {
 }
 
 .gradient {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
@@ -132,7 +132,7 @@ body, html {
 .main-content .how-to-participate {
     font-size: 18px;
     margin-top: 20px;   
-    color: #7bff00;
+    color: rgb(255, 88, 88);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -175,7 +175,7 @@ body, html {
 }
 
 .pocetak {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -186,7 +186,7 @@ body, html {
 }
 
 .bolded {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -194,7 +194,7 @@ body, html {
 }
 
 .color-font-weight {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -202,14 +202,14 @@ body, html {
 }
 
 .color {
-    background: linear-gradient(to right, rgb(117, 235, 8), rgb(2, 109, 20));
+    background: linear-gradient(to right, rgb(255, 88, 88), rgb(235, 9, 9));
     background-clip: text;
     -webkit-text-fill-color: transparent;    
     
 }
 
 .ceo-text {
-    background: rgb(117, 235, 8);
+    background: rgb(255, 88, 88);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: middle;
@@ -420,7 +420,36 @@ body, html {
     position: relative; 
 }
 
+.view-prizes {
+    position: absolute; /* Allow precise positioning */
+    left: 70%; /* Move to 70% of the screen width */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    text-align: center;
+    justify-content: center;
+    
 
+}
+
+.viewprize {
+    background:  rgb(255, 88, 88);
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: "Poppins";
+    transition: 0.3s ease;
+}
+
+.viewprize:hover {
+    border: 2px solid rgb(255, 88, 88);
+    background: transparent;
+    color: white;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
 .leader-name {
     font-size: 22px;
     font-weight: bold;
@@ -444,11 +473,11 @@ body, html {
 .leader-points {
     font-size: 20px;
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(17, 255, 9);
+    color: rgb(255, 88, 88);
     padding: 5px 15px;
     border-radius: 10px;
     margin-top: 10px;
-    text-shadow: 0 0 9px rgb(17, 255, 9);
+    text-shadow: 0 0 9px rgb(255, 88, 88);
 }
 
 
@@ -602,7 +631,7 @@ body, html {
 
 .time-value {
     font-size: 30px;
-    color: rgb(17, 255, 9);
+    color: rgb(255, 88, 88);
     font-weight: bold;
     font-family: "Montserrat"
 }
@@ -625,7 +654,7 @@ body, html {
 .show-winners {
     background: transparent;
     color: white;
-    border: 2px solid rgb(17, 255, 9);
+    border: 2px solid rgb(255, 88, 88);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -636,7 +665,7 @@ body, html {
 }
 
 .show-winners:hover {
-    border: 2px solid rgb(17, 255, 9);
+    border: 2px solid rgb(255, 88, 88);
     color: white;
     transform: scale(1.1);
     transition: 0.3s ease;
@@ -767,8 +796,8 @@ body, html {
 }
 
 .prize {
-    color: rgb(17, 255, 9);
-    text-shadow: 0 0 9px rgb(15, 173, 10);
+    color: rgb(255, 88, 88);
+    text-shadow: 0 0 9px rgb(255, 88, 88);
     width: 200px; 
     background: #101010;
     border-radius: 5px;
@@ -1830,12 +1859,12 @@ abbr {
 .winners-leader-points {
     font-size: 18px;
     font-weight: bold;
-    color: rgb(117, 235, 8);
+    color: rgb(255, 88, 88);
     margin-top: 5px;
     background: #1d1d1d;
     padding: 2px 10px;
     border-radius: 5px;
-    text-shadow: 0 0 6px rgb(117, 235, 8);
+    text-shadow: 0 0 6px rgb(255, 88, 88);
 }
 
     
@@ -1867,7 +1896,7 @@ abbr {
 
 .nav-item {
     cursor: pointer;
-    padding: 5px 10px; /* Reduce padding for a more balanced size */
+    padding: 5px 15px; /* Reduce padding for a more balanced size */
     text-align: center;
     margin: 0 8px; /* Keep some space between the buttons */
     font-weight: bold;
@@ -1892,6 +1921,7 @@ abbr {
     position: relative; /* This is needed for the line positioning */
 }
 
+/* Full paths for specific images */
 .image-container img#clashImage,
 .image-container img#skinraveImage,
 .image-container img#gambaImage,
@@ -1904,8 +1934,6 @@ abbr {
 }
 
 
-
-
 /* Style when image is inactive */
 .image-container img.inactive {
     opacity: 0.5;
@@ -1916,5 +1944,5 @@ abbr {
     height: 100px; /* Adjust the height as needed */
     background-color: white;
     position: relative;
+    
 }
-

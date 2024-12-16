@@ -91,12 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="cell">
                             <div class="wagered">
-                                <img src="chicken-coin.png" style="max-width:15px;margin-right: 5px">
+                                <img src="rain-coin.svg" style="max-width:15px;margin-right: 5px">
                                 ${wageredParts[0]}<span style="opacity: .5;">.${wageredParts[1]}</span>
                             </div>
                         </div>
                         <div class="cell">
-                            <div class="prize"><img src="chicken-coin.png" style="max-width:20px;margin-right: 5px">5</div>
+                            <div class="prize"><img src="rain-coin.svg" style="max-width:20px;margin-right: 5px">5</div>
                         </div>
                     `;
 
