@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:3000/leaderboard')  // Ažurirani URL
+    fetch('https://test-rain.onrender.com/leaderboard')  // Ažurirani URL
         .then(response => response.json())
         .then(data => {
             let leaderboard = data.results;
