@@ -1,19 +1,19 @@
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors'); // Import CORS package
+const cors = require('cors'); 
 
 const app = express();
 const PORT = 3000;
 
-// Enable CORS for all origins (or specify origins as needed)
-app.use(cors()); // This line allows all origins to access your proxy server
+
+app.use(cors()); 
 
 // Root route for "/"
 app.get('/', (req, res) => {
   res.send('Welcome to the Proxy Server! Use /leaderboard to get data.');
 });
 
-// Proxy route for "/leaderboard"
+
 app.get('/leaderboard', async (req, res) => {
   try {
     const response = await axios.get('https://api.rain.gg/v1/affiliates/leaderboard', {
@@ -29,7 +29,7 @@ app.get('/leaderboard', async (req, res) => {
       },
     });
 
-    // Log the raw API response for debugging
+    // Log the raw apiresponse for debugging
     console.log("Raw API Response:", response.data.results);
 
     if (!response.data.results || response.data.results.length === 0) {
@@ -42,7 +42,7 @@ app.get('/leaderboard', async (req, res) => {
     // Sort the valid users by 'wagered' in descending order
     const sortedUsers = validUsers.sort((a, b) => b.wagered - a.wagered);
 
-    // Limit the results to top 10 users
+    // limit up to top 10
     const topUsers = sortedUsers.slice(0, 10);
 
     console.log("Top Users:", topUsers);
