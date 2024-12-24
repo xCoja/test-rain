@@ -44,6 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
 
+                    // Adjust avatar URL to full resolution or large if .png
+                    let avatarUrl = user.avatar;
+                    if (avatarUrl.endsWith('.jpg')) {
+                        avatarUrl = avatarUrl.replace('.jpg', '_full.jpg');
+                    } else if (avatarUrl.endsWith('_small.png')) {
+                        avatarUrl = avatarUrl.replace('_small.png', '_large.png');
+                    }
+
                     // Creating HTML for the cards
                     const username = user.username;
                     const abbreviatedName = username.length > 15 ? username.slice(0, 15) + '...' : username; // Show shortened name
@@ -54,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
                             </span>
                             <div class="avatar-container avatar-${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}">
-                                <img src="${user.avatar}" alt="${user.username}">
+                                <img src="${avatarUrl}" alt="${user.username}">
                             </div>
                         </div>
                         <div class="card-body">
@@ -82,6 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     const wageredParts = user.wagered ? user.wagered.toFixed(2).split('.') : ['0', '00'];
                     const rank = index + 4; // Ranks start at 4
 
+                    // Adjust avatar URL to full resolution or large if .png
+                    let avatarUrl = user.avatar;
+                    if (avatarUrl.endsWith('.jpg')) {
+                        avatarUrl = avatarUrl.replace('.jpg', '_full.jpg');
+                    } else if (avatarUrl.endsWith('_small.png')) {
+                        avatarUrl = avatarUrl.replace('_small.png', '_large.png');
+                    }
+
                     // Set the prize based on rank
                     let prize = 0;
                     if (rank === 4) prize = 50;
@@ -91,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     row.innerHTML = `
                         <div class="cell rank-cell">
                             <span class="rank">#${rank}</span>
-                            <img src="${user.avatar}" class="avatar-img" alt="Avatar of ${user.username}">
+                            <img src="${avatarUrl}" class="avatar-img" alt="Avatar of ${user.username}">
                             <span class="name">${user.username}</span>
                         </div>
                         <div class="cell">
