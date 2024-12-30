@@ -23,7 +23,7 @@ app.get('/leaderboard', async (req, res) => {
       },
       params: {
         start_date: '2024-12-25T00:00:00.00Z',
-        end_date: '2024-01-08T00:00:00.00Z',
+        end_date: '2025-01-08T00:00:00.00Z',
         type: 'wagered',
         code: 'jonji',
       },
