@@ -1867,9 +1867,9 @@ abbr {
 
 .nav-item {
     cursor: pointer;
-    padding: 0px 6px; /* Reduce padding for a more balanced size */
+    padding: 0px 5px; /* Reduce padding for a more balanced size */
     text-align: center;
-    margin: 0 8px; /* Keep some space between the buttons */
+    margin: 0 0px; /* Keep some space between the buttons */
     font-weight: bold;
     border: 2px solid orange;
     border-radius: 5px;
