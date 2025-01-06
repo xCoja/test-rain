@@ -1281,7 +1281,7 @@ body, html {
     }
 
     .first-card {
-        transform: perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
+        transform:  perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
         
     }
     
