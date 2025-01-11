@@ -1898,7 +1898,8 @@ abbr {
 .image-container img#gambaImage,
 .image-container img#rainBetImage,
 .image-container img#daddySkinsImage,
-.image-container img#gamdomImage {
+.image-container img#gamdomImage,
+.image-container img#lootBox {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -1944,3 +1945,22 @@ abbr {
     margin-right: 10px;
     height: 45px;
 }
+
+
+#rewards {
+ margin-top: 50px;
+ margin-bottom: 500px;
+}
+
+.rewards-container {
+
+justify-content: center;
+}
+
+.rewards-container .title h1 {
+    background: linear-gradient(to right, rgb(163, 5, 5), rgba(247, 128, 128, 0.986));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
