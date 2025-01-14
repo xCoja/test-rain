@@ -371,7 +371,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     background: #101010;
-    color: rgb(247, 191, 39);
+    color: silver;
     padding: 5px 10px;
     border-radius: 50%;
     font-weight: bold;
@@ -382,12 +382,16 @@ body, html {
     z-index: 2;
 }
 
-.card-header .badge .badge-second{
-    color: silver;
+
+.card-header .badge.badge-second {
+    color: rgb(247, 191, 39); /* Default color */
+    
 }
 
-.card-header .badge .badge-third{
-    color: #ad6303;
+/* Specific badge styles for badge-third */
+.card-header .badge.badge-third {
+    color: #ad6303; 
+   
 }
 
 .card-header .badge i {

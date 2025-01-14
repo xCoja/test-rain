@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://api-jonji.jcy.gg/leaderboard-clash') // Updated URL
+    fetch('https://api-jonji.jcy.gg/leaderboard-bcgame') // Updated URL
         .then(response => response.json())
         .then(data => {
             let leaderboard = data.results || []; // Ensure data exists
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
                             </span>
                             <div class="avatar-container avatar-${rank}">
-                                <img src="${user.avatar}" class="avatar" alt="${user.name}'s avatar" />
+                                <img src="bc-avatar.png" class="avatar" alt="Default avatar" />
                             </div>
                         </div>
                         <div class="card-body">
@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                             <div class="leader-wagered">WAGERED:</div>
                            <div class="leader-amount">
-                                <img src="clash-icon.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -5px; transform: rotate(15deg);">
-                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
+                               <span style="color: rgb(51, 247, 2);margin-right: -4px;">$</span>
+                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 1px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
                             </div>
                             <div class="leader-points">
-                                <img src="clash-icon.png" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                               <span style="margin-right: -4px;">$</span>
+                                <span style="margin-right: 8px">${user.prize || 0}</span>
                             </div>
                         </div>
                     `;
@@ -100,18 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     row.innerHTML = `
                         <div class="cell rank-cell">
                             <span class="rank">#${rank}</span>
-                            <img src="${user.avatar}" class="avatar" alt="${user.name}'s avatar" />
+                            <img src="bc-avatar.png" class="avatar" alt="Default avatar" />
                             <span class="name">${formattedNameRow}</span>
                         </div>
                         <div class="cell">
                             <div class="wagered">
-                                <img src="clash-icon.png" style="max-width:25px;margin-right: 5px;transform: rotate(15deg);" />
+                               
+                           <span style="color: rgb(51, 247, 2);margin-right: 2px;">$</span>
                                 ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
                             </div>
                         </div>
                         <div class="cell">
                             <div class="prize">
-                                <img src="clash-icon.png" style="max-width:25px;margin-right: 5px;transform: rotate(15deg);" />
+                                 $
                                 ${user.prize || 0}
                             </div>
                         </div>
