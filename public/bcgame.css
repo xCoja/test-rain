@@ -1968,3 +1968,8 @@ justify-content: center;
     text-align: center;
 }
 
+.note {
+    margin-top: 25px;
+    color: gray;
+    text-align: center;
+}
