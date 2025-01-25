@@ -22,8 +22,8 @@ app.get('/leaderboard', async (req, res) => {
         accept: 'application/json',
       },
       params: {
-        start_date: '2025-01-24T23:08:00.00Z',
-        end_date: '2025-02-07T23:08:00.00Z',
+        start_date: '2025-01-24T23:00:00.00Z',
+        end_date: '2025-02-07T23:00:00.00Z',
         type: 'wagered',
         code: 'jonji',
       },
