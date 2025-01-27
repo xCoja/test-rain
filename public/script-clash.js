@@ -61,19 +61,21 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="leader-name">
-                                <abbr title="${user.name}">${formattedName}</abbr>
-                            </div>
+                         <div class="leader-name">
+                         ${formattedName} <!-- Removed the <abbr> tag and its title attribute -->
+                                 </div>
                             <div class="leader-wagered">WAGERED:</div>
                            <div class="leader-amount">
-                                <img src="clash-icon.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -5px; transform: rotate(15deg);">
-                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
-                            </div>
-                            <div class="leader-points">
-                                <img src="clash-icon.png" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
-                            </div>
-                        </div>
+                            <img src="clash-icon.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -5px; transform: rotate(15deg);">
+                              ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
+                                  <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
+                               </div>
+                              <div class="leader-points">
+                            <img src="clash-icon.png" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
+                         <span style="margin-right: 25px">${user.prize || 0}</span>
+                         </div>
+                       </div>
+ 
                     `;
                     topThreeSection.appendChild(topUserCard);
                 }
