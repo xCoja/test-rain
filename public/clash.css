@@ -1247,18 +1247,22 @@ body, html {
 
     .image-container img#clashImage,
     .image-container img#skinraveImage,
-    .image-container img#rainImage {
-        width: 150px !important;
+    .image-container img#rainImage,
+    .image-container img#csgobigImage {
+        width: 140px !important;
         cursor: pointer;
         transition: opacity 0.3s ease;
         margin-bottom: 10px; /* Adds space between the images */
+    }
+    .image-container img#csgobigImage {
+        width: 120px !important;
     }
 
     .line {
         display: none; /* Hides the lines on mobile */
     }
 
-
+   
     
 }
 
@@ -1900,15 +1904,20 @@ abbr {
 }
 
 .image-container img#clashImage,
-.image-container img#skinraveImage,
-.image-container img#gambaImage,
-.image-container img#rainBetImage,
-.image-container img#daddySkinsImage,
-.image-container img#gamdomImage,
-.image-container img#lootBox {
+.image-container img#csgobigImage {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
+}
+
+
+.image-container img#csgobigImage {
+    width: 160px ;
+    margin-bottom: 10px;
+}
+
+.image-container img#rainImage {
+    margin-bottom: 5px;
 }
 
 

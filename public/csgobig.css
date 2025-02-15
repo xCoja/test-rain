@@ -54,7 +54,7 @@ body, html {
 }
 
 .txtt {
-    background: linear-gradient(to right, rgb(255, 208, 0), rgb(241, 226, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -64,7 +64,7 @@ body, html {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    background: linear-gradient(to right, rgb(255, 208, 0), rgb(241, 226, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,7 +73,7 @@ body, html {
 }
 
 .gradient {
-    background: linear-gradient(to right, rgb(255, 208, 0), rgb(241, 226, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
@@ -175,7 +175,7 @@ body, html {
 }
 
 .pocetak {
-    background: linear-gradient(to right, rgb(255, 174, 0), rgb(241, 198, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -186,7 +186,7 @@ body, html {
 }
 
 .bolded {
-    background: linear-gradient(to right, rgb(255, 174, 0), rgb(241, 198, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -194,7 +194,7 @@ body, html {
 }
 
 .color-font-weight {
-    background: linear-gradient(to right, rgb(255, 174, 0), rgb(241, 198, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -202,14 +202,14 @@ body, html {
 }
 
 .color {
-    background: linear-gradient(to right, rgb(255, 174, 0), rgb(241, 198, 5));
+    background: linear-gradient(to right, #e1b56f, #e6af57);
     background-clip: text;
     -webkit-text-fill-color: transparent;    
     
 }
 
 .ceo-text {
-    background: rgb(255, 174, 0);
+    background:  #e6af57;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: middle;
@@ -365,6 +365,7 @@ body, html {
 
 
 
+/* General badge styles */
 .card-header .badge {
     position: absolute;
     top: -20px; 
@@ -393,6 +394,7 @@ body, html {
     color: #ad6303; 
    
 }
+
 
 .card-header .badge i {
     font-size: 20px;
@@ -442,11 +444,11 @@ body, html {
 .leader-points {
     font-size: 20px;
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(255, 174, 0);
+    color: #e1b56f;
     padding: 5px 15px;
     border-radius: 10px;
     margin-top: 10px;
-    text-shadow: 0 0 9px rgb(255, 174, 0);
+    text-shadow: 0 0 9px #e1b56f;
 }
 
 
@@ -598,7 +600,7 @@ body, html {
 
 .time-value {
     font-size: 30px;
-    color: rgb(255, 174, 0);
+    color: #e1b56f;
     font-weight: bold;
     font-family: "Montserrat"
 }
@@ -621,7 +623,7 @@ body, html {
 .show-winners {
     background: transparent;
     color: white;
-    border: 2px solid rgb(255, 174, 0);
+    border: 2px solid #e1b56f;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -632,7 +634,7 @@ body, html {
 }
 
 .show-winners:hover {
-    border: 2px solid rgb(255, 174, 0);
+    border: 2px solid #e1b56f;
     color: white;
     transform: scale(1.1);
     transition: 0.3s ease;
@@ -763,8 +765,8 @@ body, html {
 }
 
 .prize {
-    color: rgb(255, 174, 0);
-    text-shadow: 0 0 9px rgb(255, 174, 0);
+    color: #e1b56f;
+    text-shadow: 0 0 9px #e1b56f;
     width: 200px; 
     background: #101010;
     border-radius: 5px;
@@ -1255,11 +1257,12 @@ body, html {
     .image-container img#csgobigImage {
         width: 120px !important;
     }
+
     .line {
         display: none; /* Hides the lines on mobile */
     }
 
-
+   
     
 }
 
@@ -1288,7 +1291,7 @@ body, html {
     }
 
     .first-card {
-        transform:  perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
+        transform: perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
         
     }
     
@@ -1838,12 +1841,12 @@ abbr {
 .winners-leader-points {
     font-size: 18px;
     font-weight: bold;
-    color: rgb(255, 174, 0);
+    color: #e1b56f;
     margin-top: 5px;
     background: #1d1d1d;
     padding: 2px 10px;
     border-radius: 5px;
-    text-shadow: 0 0 6px rgb(255, 174, 0);
+    text-shadow: 0 0 6px #e1b56f;
 }
 
     
@@ -1907,7 +1910,6 @@ abbr {
     transition: opacity 0.3s ease;
 }
 
-
 .image-container img#csgobigImage {
     width: 160px ;
     margin-bottom: 10px;
@@ -1916,10 +1918,6 @@ abbr {
 .image-container img#rainImage {
     margin-bottom: 5px;
 }
-
-
-
-
 
 /* Style when image is inactive */
 .image-container img.inactive {
@@ -1951,3 +1949,29 @@ abbr {
         gap: 20px; /* Adjust gap for stacked cards */
     }
 }
+
+
+.avatar {
+    border-radius: 100px;
+    margin-right: 10px;
+    height: 45px;
+}
+
+
+#rewards {
+ margin-top: 50px;
+ margin-bottom: 500px;
+}
+
+.rewards-container {
+
+justify-content: center;
+}
+
+.rewards-container .title h1 {
+    background: linear-gradient(to right, rgb(163, 5, 5), rgba(247, 128, 128, 0.986));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
