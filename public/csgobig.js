@@ -213,4 +213,26 @@ popupOverlayDisclaimer.addEventListener('click', (event) => {
         popupOverlayDisclaimer.style.display = 'none';
     }
 });
+
+
+
+const claimButton = document.getElementById('claim-button');
+const popupOverlayClaimbutton = document.getElementById('popup-overlay-claimbutton');
+const popupCloseClaimbutton = document.getElementById('popup-close-claimbutton');
+
+claimButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlayClaimbutton.style.display = 'flex';
+});
+
+popupCloseClaimbutton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlayClaimbutton.style.display = 'none';
+});
+
+popupOverlayClaimbutton.addEventListener('click', (event) => {
+    if (event.target === popupOverlayClaimbutton) {
+        popupOverlayClaimbutton.style.display = 'none';
+    }
+});
 };

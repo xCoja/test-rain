@@ -1979,3 +1979,343 @@ justify-content: center;
     text-align: center;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .bonuses-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height for each section */
+    text-align: center;
+    color: white;
+    
+}
+
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+
+.custom-button,
+.custom-button-2 {
+    background: #31b9ff;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 13px 27px;
+    border-radius: 4px;
+    width: 180px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+    outline: 2px solid #31b9ff;
+}
+
+.custom-button {
+    color: black;
+    font-weight: 600;
+}
+
+.custom-button-2 {
+    background: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    outline-color: #31b9ff;
+    transition: background 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+}
+
+.custom-button-2:hover {
+    outline-color: #31b9ff;
+    transition: background 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+}
+
+.custom-button:hover {
+    background: transparent;
+    outline: 2px solid #31b9ff;
+    color: white;
+    transition: background 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+}
+
+
+
+
+
+/* Claim Bonuses Section */
+.claim-bonuses-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+    margin-bottom: -150px; /* Adjust the margin to position just below the buttons */
+}
+
+
+.claim-bonuses-section .claim-bonuses-text {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px; /* Reduce margin to bring text closer to the arrow */
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* BONUS SECTION */
+
+
+.bonuses-section {
+    position: relative; /* Ensure the pseudo-elements are positioned relative to this section */
+    padding-bottom: 0px; /* Padding at the bottom of the section */
+    margin-bottom: -20px;
+    margin-top: -50px;
+    overflow: hidden; /* Prevent the glow from affecting other sections */
+   
+}
+
+
+
+
+
+.bonuses-title {
+    font-size: 2.5rem;
+    color: #00aaff;
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+   
+    
+}
+
+
+
+.bonuses-title-container p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* Explicitly center the subtitle text */
+    max-width: 100%; /* Ensure no width restrictions are applied */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; /* Center the block-level element */
+    margin-bottom: -30px;
+}
+
+.bonuses-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 150px; /* Ensure space between title and cards */
+    z-index: 2;
+}
+
+.bonus-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Adjust the width as necessary */
+    height: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font usage */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center all content horizontally */
+}
+
+.bonus-card img {
+    width: 100%; /* This ensures that the image fills the container but doesn't exceed its size */
+    max-width: 200px; /* Adjust image size */
+    margin-bottom: 20px;
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.clash-img {
+    width: 182px !important; /* Set the width explicitly */
+    margin-top: 12px;
+    height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+.rain-img {
+    margin-bottom: 11px !important;
+}
+
+.bonus-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Capitalize text */
+    font-weight: 600;
+    text-align: center; /* Center the title text */
+}
+
+.bonus-list {
+    list-style-type: none;
+    padding: 16px;
+    margin: 0;
+    text-align: left;
+    font-size: 0.9rem; /* Slightly smaller text */
+    background-color: #111111;
+    border-radius: 16px;
+    width: 90%; /* Adjust the width as necessary to be centered */;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align list items to the left */
+    margin-left: auto;
+    margin-right: auto; /* Center the background container */
+}
+
+.bonus-list li {
+    margin-bottom: 10px;
+    color: #ffffff;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align the content of each list item to the left */
+}
+
+.bonus-list li::before {
+    content: '»'; /* Add custom bullet */
+    margin-right: 10px;
+    color: #f10f0f; /* Bullet color */
+}
+
+
+.claim-button {
+    background-color: #ff0000;
+    color: #000000;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%; /* Make the button take full width */
+    box-sizing: border-box; /* Include padding in the width */
+    margin-top: 20px; /* Ensure some space between list and button */
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+}
+
+.claim-button:hover {
+    border: 1px solid rgb(255, 0, 0);
+    background: transparent;
+    color: white;    
+    transition: 0.3s ease;
+}
+
+
+
+.diamond-icon5 {
+    display: flex;
+    flex-wrap: wrap; /* Ensures it wraps only where necessary */
+    align-items: center;
+    white-space: nowrap; /* Prevents unwanted line breaks */
+
+}
+
+.diamond-icon5 img {
+    max-width: 15px;
+    margin-left: 5px;
+    transform: rotate(13deg);
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.cdd {
+   
+        margin-top: -25px;
+        margin-bottom: 15px;
+        color: #ffffff;
+        line-height: 1.5;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        justify-content: flex-start; /* Align the content of each list item to the left */ 
+}
+
+.diamond-icon4 { 
+    display: flex;
+    flex-wrap: wrap; /* Ensures it wraps only where necessary */
+    align-items: center;
+    white-space: nowrap; /* Prevents unwanted line breaks */
+
+    
+}
+
+.diamond-icon4 img {
+    max-width: 15px;
+    margin-left: 5px;
+    vertical-align: middle;
+    margin-right: 2px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cdd2 {
+   
+    margin-top: -45px;
+    margin-bottom: 60px;
+    color: #ffffff;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    justify-content: flex-start; /* Align the content of each list item to the left */ 
+}
+
+.claim-button2 h1{
+   font-size: 22px;
+   margin-left: 15px;
+}
+
+.claim-button2 h4{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 25px;
+    text-align: center;
+}
