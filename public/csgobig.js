@@ -150,27 +150,6 @@ popupOverlayWinners.addEventListener('click', (event) => {
 
 
 
-    // How to Claim Prize Popup
-    const howToClaimButton = document.querySelector('.how-to-claim-prize');
-    const popupOverlayClaim = document.getElementById('popup-overlay-claim');
-    const popupCloseClaim = document.getElementById('popup-close-claim');
-
-    howToClaimButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlayClaim.style.display = 'flex';
-    });
-
-    popupCloseClaim.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlayClaim.style.display = 'none';
-    });
-
-    popupOverlayClaim.addEventListener('click', (event) => {
-        if (event.target === popupOverlayClaim) {
-            popupOverlayClaim.style.display = 'none';
-        }
-    });
-
 
 // Contact Popup
 const contactButton = document.getElementById('contact-button');
