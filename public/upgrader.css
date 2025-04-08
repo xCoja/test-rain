@@ -1848,12 +1848,13 @@ abbr {
 .winners-leader-points {
     font-size: 18px;
     font-weight: bold;
-    color: #e1b56f;
+    color: #80dffd;
+    text-shadow: 0 0 9px #80dffd;
     margin-top: 5px;
     background: #1d1d1d;
     padding: 2px 10px;
     border-radius: 5px;
-    text-shadow: 0 0 6px #e1b56f;
+    
 }
 
     
@@ -2303,3 +2304,4 @@ justify-content: center;
     max-width: 250px;
    
 }
+
