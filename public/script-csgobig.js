@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                  </div>
                             <div class="leader-wagered">WAGERED:</div>
                            <div class="leader-amount">
-                            <img src="https://csgobig.com/assets/svg/redesign/big-chip-icon-2.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px;">
+                            <img src="big-chip-icon-2.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px;">
                               ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
                                   <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
                                </div>
                               <div class="leader-points">
-                            <img src="https://csgobig.com/assets/svg/redesign/big-chip-icon-2.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -1px;" />
+                            <img src="big-chip-icon-2.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -1px;" />
                          <span style="margin-right: 25px">${user.prize || 0}</span>
                          </div>
                        </div>
