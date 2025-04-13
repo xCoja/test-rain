@@ -117,13 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="cell">
                             <div class="wagered">
-                                <img src="https://csgobig.com/assets/svg/redesign/big-chip-icon-2.svg" style="max-width:17px;margin-right: 5px;" />
+                                <img src="big-chip-icon-2.svg" style="max-width:17px;margin-right: 5px;" />
                                 ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
                             </div>
                         </div>
                         <div class="cell">
                             <div class="prize">
-                                <img src="https://csgobig.com/assets/svg/redesign/big-chip-icon-2.svg" style="max-width:20px;margin-right: 5px;" />
+                                <img src="big-chip-icon-2.svg" style="max-width:20px;margin-right: 5px;" />
                                 ${user.prize || 0}
                             </div>
                         </div>
