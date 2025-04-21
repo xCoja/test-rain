@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://api-jonji.jcy.gg/leaderboard-big') // Updated URL
+    fetch('https://prxy-uusc.onrender.com/csgobig-proxy') // Updated URL
         .then(response => response.json())
         .then(data => {
-            let leaderboard = data.results || []; // Ensure data exists
+            let leaderboard = data || []; // Directly use the data as an array
 
             // Sort the leaderboard by wagered amount and acquireTime
             leaderboard.sort((a, b) => {
@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
                          <span style="margin-right: 25px">${user.prize || 0}</span>
                          </div>
                        </div>
- 
                     `;
                     topThreeSection.appendChild(topUserCard);
                 }
