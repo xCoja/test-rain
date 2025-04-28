@@ -1913,7 +1913,8 @@ abbr {
 
 .image-container img#clashImage,
 .image-container img#csgobigImage,
-.image-container img#upgraderImage {
+.image-container img#upgraderImage,
+.image-container img#chickenImage {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
