@@ -1,6 +1,6 @@
 function countdown() {
     // Set the start time to yesterday at 4:00 PM CET, converted to UTC
-    var startTimeUTC = Date.UTC(2024, 12, 10, 24, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
+    var startTimeUTC = Date.UTC(2025, 4, 10, 0, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
 
     // Calculate the end time: 14 days after the start time
     var countDownDate = startTimeUTC + (14 * 24 * 60 * 60 * 1000); // 14 days in milliseconds
@@ -26,12 +26,10 @@ function countdown() {
         // If the countdown is over, stop the timer
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("days").innerHTML = "P";
-            document.getElementById("hours").innerHTML = "A";
-            document.getElementById("minutes").innerHTML = "U";
-            document.getElementById("seconds").innerHTML = "S";
-            document.getElementById("seconds1").innerHTML = "E";
-            document.getElementById("seconds2").innerHTML = "D";
+            document.getElementById("days").innerHTML = "0";
+            document.getElementById("hours").innerHTML = "0";
+            document.getElementById("minutes").innerHTML = "0";
+            document.getElementById("seconds").innerHTML = "0";
         }
     }, 1000);
 }
@@ -50,21 +48,34 @@ function createBubbles() {
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}%`;
         bubble.style.animationDelay = `${Math.random() * 15}s`;
-        bubble.style.background = `rgb(245, 191, 76, ${Math.random() * 0.5 + 0.2})`;
+        bubble.style.background = `rgb(216, 178, 8, ${Math.random() * 0.5 + 0.2})`;
 
         bubblesContainer.appendChild(bubble);
     }
 }
 
+// Show Winners Popup
 const showWinnersButton = document.querySelector('.show-winners');
 const popupOverlayWinners = document.getElementById('popup-overlay-winners');
 const popupCloseWinners = document.getElementById('popup-close-winners');
-const paginationButtons = document.querySelectorAll('.pagination-button');
-const pages = document.querySelectorAll('.winners-leaderboard.page');
+const set1 = document.getElementById('set1');
+const set2 = document.getElementById('set2');
+const set3 = document.getElementById('set3')
+const nav1 = document.getElementById('nav1');
+const nav2 = document.getElementById('nav2');
+const nav3 = document.getElementById('nav3')
+const popupDate = document.getElementById('popup-date');  // Get the popup date element
 
 showWinnersButton.addEventListener('click', (event) => {
     event.stopPropagation();
     popupOverlayWinners.style.display = 'flex';
+    set1.style.display = 'none'; 
+    set2.style.display = 'none'; 
+    set3.style.display = 'block'
+    nav1.classList.add('active'); 
+    nav2.classList.remove('active');
+    nav3.classList.remove('active')
+
 });
 
 popupCloseWinners.addEventListener('click', (event) => {
@@ -78,7 +89,14 @@ popupOverlayWinners.addEventListener('click', (event) => {
     }
 });
 
+
+
+
+
+
+
 const YOUTUBE_RSS_FEED = 'https://www.youtube.com/feeds/videos.xml?channel_id=UChMMQ09LtWh5n2w-LeSsxMQ'; 
+
 const RSS2JSON_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
 async function fetchYouTubeVideos() {
@@ -151,26 +169,13 @@ popupOverlayWinners.addEventListener('click', (event) => {
 
 
 
-    // How to Claim Prize Popup
-    const howToClaimButton = document.querySelector('.how-to-claim-prize');
-    const popupOverlayClaim = document.getElementById('popup-overlay-claim');
-    const popupCloseClaim = document.getElementById('popup-close-claim');
 
-    howToClaimButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlayClaim.style.display = 'flex';
-    });
 
-    popupCloseClaim.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlayClaim.style.display = 'none';
-    });
 
-    popupOverlayClaim.addEventListener('click', (event) => {
-        if (event.target === popupOverlayClaim) {
-            popupOverlayClaim.style.display = 'none';
-        }
-    });
+
+
+
+
 
 
 // Contact Popup
