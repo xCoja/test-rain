@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://api-jonji.jcy.gg/leaderboard-rain')
+    fetch('https://raintest34.onrender.com/leaderboard')
         .then(response => response.json())
         .then(data => {
             let leaderboard = data.results || [];
@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.wagered.toFixed(2);
 
-                    let formattedName = user.name.length > 3
-                        ? user.name.slice(0, 3) + "****"
-                        : user.name.slice(0, 1) + "****";
+                    let formattedName = user.username.length > 3
+                        ? user.username.slice(0, 3) + "****"
+                        : user.username.slice(0, 1) + "****";
 
                     topUserCard.innerHTML = `
                         <div class="card-header">
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
                             </span>
                             <div class="avatar-container avatar-${rank}">
-                                <img src="${user.avatar}" class="avatar" style="max-width: 96px;" alt="${user.name}'s avatar" />
+                                <img src="${user.avatar}" class="avatar" style="max-width: 96px;" alt="${user.username}'s avatar" />
                             </div>
                         </div>
                         <div class="card-body">
@@ -95,14 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.wagered.toFixed(2);
 
-                    let formattedNameRow = user.name.length > 3
-                        ? user.name.slice(0, 3) + "****"
-                        : user.name.slice(0, 1) + "****";
+                    let formattedNameRow = user.username.length > 3
+                        ? user.username.slice(0, 3) + "****"
+                        : user.username.slice(0, 1) + "****";
 
                     row.innerHTML = `
                         <div class="cell rank-cell">
                             <span class="rank">#${rank}</span>
-                            <img src="${user.avatar}" class="avatar" style="max-width: 66px;border-radius:32px;" alt="${user.name}'s avatar" />
+                            <img src="${user.avatar}" class="avatar" style="max-width: 66px;border-radius:32px;" alt="${user.username}'s avatar" />
                             <span class="name">${formattedNameRow}</span>
                         </div>
                         <div class="cell">
