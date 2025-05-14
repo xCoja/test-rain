@@ -1914,7 +1914,8 @@ abbr {
 .image-container img#clashImage,
 .image-container img#csgobigImage,
 .image-container img#upgraderImage,
-.image-container img#chickenImage {
+.image-container img#chickenImage,
+.image-container img#skinraveImage {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
