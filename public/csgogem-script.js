@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://jonji-api.vercel.app/api/leaderboard/clashgg')
+    fetch('https://jonji-api.vercel.app/api/leaderboard/csgogem')
         .then(response => response.json())
         .then(data => {
             let leaderboard = data.players || [];
@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="leader-name">${formattedName}</div>
                             <div class="leader-wagered">WAGERED:</div>
                             <div class="leader-amount">
-                                <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
+                                <img src="csgogemcoin-2.png" style="max-width: 27px; vertical-align: middle; margin-bottom: 2px;margin-right: -3px;">
                                 ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
                                 <span style="opacity: .5; margin-right: 15spx;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
                             </div>
                             <div class="leader-points">
-                                <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 3px;margin-right: -5px;" />
+                                <img src="csgogemcoin-2.png" style="max-width: 27px; vertical-align: middle; margin-bottom: 5px;margin-right: -5px;" />
                                 <span style="margin-right: 25px">${user.prize || 0}</span>
                             </div>
                         </div>
@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="cell">
                             <div class="wagered">
-                                <img src="clashicon.png" style="max-width:17px" />
+                                <img src="csgogemcoin-2.png" style="max-width:25px; margin-bottom:2px;" />
                                 ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
                             </div>
                         </div>
                         <div class="cell">
                             <div class="prize">
-                                <img src="clashicon.png" style="max-width:20px" />
+                                <img src="csgogemcoin-2.png" style="max-width:28px" />
                                 ${user.prize || 0}
                             </div>
                         </div>
