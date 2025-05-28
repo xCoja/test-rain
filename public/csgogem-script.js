@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
             displayOrder.forEach((rankIndex, displayIndex) => {
                 const user = topThreeUsers[rankIndex];
                 if (user) {
-                    if (
+                    if (user.avatar === "/csgogem.png") {
+                        user.avatar = "csgogemlogo.avif";
+                    } else if (
                         user.avatar === "/assets/img/censored_avatar.png" ||
                         user.avatar === "/assets/anonymous.webp" ||
                         user.avatar.includes("/assets/")
@@ -78,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard.slice(3).forEach((user, index) => {
                 if (user) {
-                    if (
+                    if (user.avatar === "/csgogem.png") {
+                        user.avatar = "csgogemlogo.avif";
+                    } else if (
                         user.avatar === "/assets/img/censored_avatar.png" ||
                         user.avatar === "/assets/anonymous.webp" ||
                         user.avatar.includes("/assets/")
