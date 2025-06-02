@@ -14,6 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard = leaderboard.slice(0, 10);
 
+            // Inject fixed prizes based on rank
+            const prizeMap = {
+                0: 750,  // 1st
+                1: 325,  // 2nd
+                2: 175,  // 3rd
+                3: 100,  // 4th
+                4: 50,   // 5th
+                5: 20,   // 6th
+                6: 20,   // 7th
+                7: 20,   // 8th
+                8: 20,   // 9th
+                9: 20    // 10th
+            };
+
+            leaderboard.forEach((user, index) => {
+                user.prize = prizeMap[index] || 0;
+            });
+
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
 
@@ -23,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const topThreeUsers = leaderboard.slice(0, 3);
             const displayOrder = [1, 0, 2];
 
-            // Helper: format name
             function formatUsername(name) {
                 let safeName = name;
                 if (name.startsWith("<")) {
@@ -74,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                             <div class="leader-points">
                                 <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -3px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                                <span style="margin-right: 25px">${user.prize}</span>
                             </div>
                         </div>
                     `;
@@ -114,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="prize">
                                 <img src="logo-value.svg" style="max-width:20px" />
-                                ${user.prize || 0}
+                                ${user.prize}
                             </div>
                         </div>
                     `;
