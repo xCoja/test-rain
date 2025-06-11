@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://jonji-api.vercel.app/api/leaderboard/csgold') // Updated URL
+    fetch('https://jonji-api.vercel.app/api/leaderboard/csgold')
         .then(response => response.json())
         .then(data => {
             let leaderboard = data.players || [];
+
+            leaderboard.forEach(user => {
+                user.wagered = parseFloat(user.wagered) || 0;
+            });
 
             leaderboard.sort((a, b) => {
                 if (b.wagered !== a.wagered) {
@@ -42,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
 
-                    // Conditional avatar source
                     const avatarSrc = (user.avatar === '/csgold.png') ? 'csgold.png' : user.avatar;
 
                     topUserCard.innerHTML = `
@@ -61,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="leader-wagered">WAGERED:</div>
                             <div class="leader-amount">
                                 <img src="csgold-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -5px; transform: rotate(15deg);">
-                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
-                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
+                                ${user.wagered.toFixed(2).split('.')[0]}
+                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered.toFixed(2).split('.')[1]}</span>
                             </div>
                             <div class="leader-points">
                                 <img src="csgold-coin.svg" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
@@ -89,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
 
-                    // Conditional avatar source for rows
                     const avatarSrcRow = (user.avatar === '/csgold.png') ? 'csgold.png' : user.avatar;
 
                     row.innerHTML = `
