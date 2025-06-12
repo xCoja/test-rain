@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard = leaderboard.slice(0, 10);
 
+            // Inject prizes manually
+            const prizes = [500, 250, 125, 50, 25, 10, 10, 10, 10, 10];
+            leaderboard.forEach((user, index) => {
+                user.prize = prizes[index];
+            });
+
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
 
@@ -64,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="leader-amount">
                                 <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
                                 ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
-                                <span style="opacity: .5; margin-right: 15spx;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
+                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
                             </div>
                             <div class="leader-points">
                                 <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 3px;margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                                <span style="margin-right: 25px">${user.prize}</span>
                             </div>
                         </div>
                     `;
@@ -114,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="prize">
                                 <img src="clashicon.png" style="max-width:20px" />
-                                ${user.prize || 0}
+                                ${user.prize}
                             </div>
                         </div>
                     `;
