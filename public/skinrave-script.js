@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             let leaderboard = data.results || [];
 
-            // Sort the leaderboard
+            // Sort as before
             leaderboard.sort((a, b) => {
                 if (b.wagered !== a.wagered) {
                     return b.wagered - a.wagered;
@@ -14,18 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard = leaderboard.slice(0, 10);
 
-            // Inject fixed prizes based on rank
             const prizeMap = {
-                0: 750,  // 1st
-                1: 325,  // 2nd
-                2: 175,  // 3rd
-                3: 100,  // 4th
-                4: 50,   // 5th
-                5: 20,   // 6th
-                6: 20,   // 7th
-                7: 20,   // 8th
-                8: 20,   // 9th
-                9: 20    // 10th
+                0: 1000, 1: 500, 2: 200,
+                3: 125, 4: 75, 5: 20,
+                6: 20, 7: 20, 8: 20, 9: 20
             };
 
             leaderboard.forEach((user, index) => {
@@ -51,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return safeName + "****";
             }
 
-            displayOrder.forEach((rankIndex, displayIndex) => {
+            displayOrder.forEach((rankIndex) => {
                 const user = topThreeUsers[rankIndex];
                 if (user) {
                     if (user.avatar === "/assets/img/censored_avatar.png") {
@@ -66,9 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                    const formattedWagered = user.wagered >= 1000 
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
+                    // <-- Only here we add commas via locale formatting
+                    const parts = user.wagered.toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    }).split('.');
+                    const intPart = parts[0];
+                    const decPart = parts[1];
 
                     const formattedName = formatUsername(user.name);
 
@@ -86,8 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="leader-wagered">WAGERED:</div>
                             <div class="leader-amount">
                                 <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -3px;">
-                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
-                                <span style="opacity: .5; margin-right: 15spx;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
+                                ${intPart}
+                                <span style="opacity: .5; margin-right: 15spx;">.${decPart}</span>
                             </div>
                             <div class="leader-points">
                                 <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -3px;" />

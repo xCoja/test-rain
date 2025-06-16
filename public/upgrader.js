@@ -1,6 +1,6 @@
 function countdown() {
     // Set the start time to yesterday at 4:00 PM CET, converted to UTC
-    var startTimeUTC = Date.UTC(2025, 4, 30, 0, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
+    var startTimeUTC = Date.UTC(2025, 5, 13, 0, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
 
     // Calculate the end time: 14 days after the start time
     var countDownDate = startTimeUTC + (14 * 24 * 60 * 60 * 1000); // 14 days in milliseconds
