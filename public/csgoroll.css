@@ -2352,3 +2352,32 @@ justify-content: center;
    
 }
 
+.store-section {
+  text-align: center;
+  margin: 60px 0; /* Add spacing between sections */
+}
+
+.rewards-title h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.store-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: red;
+  border: 2px solid red;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.store-button:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
