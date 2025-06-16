@@ -60,16 +60,33 @@ body, html {
 }
 
 .nav a {
-    align-items: center;
+    position: relative;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+    margin-right: 35px;
+    text-decoration: none;
     background: linear-gradient(to right, #f1d65e, #d89504);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-decoration: none;
-    margin-right: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: #f1d65e;
+    border-radius: 2px;
+}
+
+.nav a:hover {
+    filter: brightness(1.3);
 }
 
 .gradient {
@@ -1007,6 +1024,49 @@ body, html {
     }
 }
 
+@media (max-width: 1800px) {
+    .image-container img#clashImage,
+.image-container img#csgobigImage,
+.image-container img#upgraderImage,
+.image-container img#chickenImage,
+.image-container img#skinraveImage {
+    width: 150px !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+}
+@media (max-width: 1400px) {
+    .image-container img#clashImage,
+.image-container img#csgobigImage,
+.image-container img#upgraderImage,
+.image-container img#chickenImage,
+.image-container img#skinraveImage {
+    width: 100px !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+}
+@media (max-width: 1000px) {
+   .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the images horizontally */
+    }
+
+    .image-container img#clashImage,
+    .image-container img#skinraveImage,
+    .image-container img#rainImage,
+    .image-container img#csgobigImage {
+        width: 140px !important;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        margin-bottom: 10px; /* Adds space between the images */
+    }
+    .line {
+        display: none; 
+    }
+}
+
 @media (max-width: 576px) {
     .header, .main-content, .leaderboard, .leaderboard-entry {
         padding: 5px;
@@ -1015,7 +1075,9 @@ body, html {
     .main-content h1 {
         font-size: 28px;
     }
-
+     .logo {
+        display: none;
+     }
     .main-content p {
         font-size: 12px;
     }

@@ -60,16 +60,33 @@ body, html {
 }
 
 .nav a {
-    align-items: center;
+    position: relative;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+    margin-right: 35px;
+    text-decoration: none;
     background: linear-gradient(to right, rgb(234, 62, 48), rgb(175, 20, 6));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-decoration: none;
-    margin-right: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: rgb(234, 62, 48);
+    border-radius: 2px;
+}
+
+.nav a:hover {
+    filter: brightness(1.3);
 }
 
 .gradient {
@@ -1055,6 +1072,9 @@ body, html {
     .main-content h1 {
         font-size: 28px;
     }
+    .logo {
+    display: none;
+  }
 
     .main-content p {
         font-size: 12px;
