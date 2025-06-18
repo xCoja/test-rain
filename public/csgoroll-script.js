@@ -15,7 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 return a.acquireTime - b.acquireTime;
             });
 
+            // Add filler users if less than 10
+            const fillerCount = 10 - leaderboard.length;
+            for (let i = 0; i < fillerCount; i++) {
+                leaderboard.push({
+                    name: "_",
+                    avatar: "questionmark.jpg",
+                    deposited: 0,
+                    prize: 0,
+                    acquireTime: Date.now() + i
+                });
+            }
+
+            // Trim to top 10 and assign prizes
             leaderboard = leaderboard.slice(0, 10);
+            const prizeMap = [500, 250, 125, 75, 50, 0, 0, 0, 0, 0];
+            leaderboard.forEach((user, index) => {
+                user.prize = prizeMap[index];
+            });
 
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
@@ -42,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.deposited.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.deposited.toFixed(2);
 
-                    let formattedName = user.name.length > 3
+                    const formattedName = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
 
@@ -58,18 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="leader-name">
-                                ${formattedName}
-                            </div>
+                            <div class="leader-name">${formattedName}</div>
                             <div class="leader-wagered">DEPOSITED:</div>
                             <div class="leader-amount">
-                                <img src="rollcoin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -3px; ">
+                                <img src="rollcoin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -3px;">
                                 ${user.deposited.toFixed(2).split('.')[0]}
                                 <span style="opacity: .5; margin-right: 15px;">.${user.deposited.toFixed(2).split('.')[1]}</span>
                             </div>
                             <div class="leader-points">
                                 <img src="rollcoin.png" style="max-width: 25px;  vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                                <span style="margin-right: 25px">${user.prize}</span>
                             </div>
                         </div>
                     `;
@@ -88,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? user.deposited.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.deposited.toFixed(2);
 
-                    let formattedNameRow = user.name.length > 3
+                    const formattedNameRow = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
 
@@ -109,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="prize">
                                 <img src="rollcoin.png" style="max-width:25px;margin-right: 5px;" />
-                                ${user.prize || 0}
+                                ${user.prize}
                             </div>
                         </div>
                     `;
