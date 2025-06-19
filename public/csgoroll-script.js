@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('https://api-jonji.jcy.gg/leaderboard-csgoroll')
         .then(response => response.json())
         .then(data => {
-            let leaderboard = data.results|| [];
+            let leaderboard = data.results || [];
 
             leaderboard.forEach(user => {
-                user.amount = parseFloat(user.deposited) || 0; // changed to amount
+                user.deposited = parseFloat(user.deposited) || 0;
             });
 
             leaderboard.sort((a, b) => {
-                if (b.amount !== a.amount) {
-                    return b.amount - a.amount;
+                if (b.deposited !== a.deposited) {
+                    return b.deposited - a.deposited;
                 }
                 return a.acquireTime - b.acquireTime;
             });
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 leaderboard.push({
                     name: "_",
                     avatar: "questionmark.jpg",
-                    amount: 0,
+                    deposited: 0,
                     prize: 0,
                     acquireTime: Date.now() + i
                 });
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                    const formattedAmount = user.amount >= 1000 
-                        ? user.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.amount.toFixed(2);
+                    const formattedDeposited = user.deposited >= 1000 
+                        ? user.deposited.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                        : user.deposited.toFixed(2);
 
                     const formattedName = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="card-body">
                             <div class="leader-name">${formattedName}</div>
-                            <div class="leader-wagered">AMOUNT:</div>
+                            <div class="leader-wagered">DEPOSITED:</div>
                             <div class="leader-amount">
                                 <img src="rollcoin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -3px;">
-                                ${user.amount.toFixed(2).split('.')[0]}
-                                <span style="opacity: .5; margin-right: 15px;">.${user.amount.toFixed(2).split('.')[1]}</span>
+                                ${user.deposited.toFixed(2).split('.')[0]}
+                                <span style="opacity: .5; margin-right: 15px;">.${user.deposited.toFixed(2).split('.')[1]}</span>
                             </div>
                             <div class="leader-points">
                                 <img src="rollcoin.png" style="max-width: 25px;  vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
@@ -99,9 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const rank = index + 4;
 
-                    const formattedAmountRow = user.amount >= 1000
-                        ? user.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.amount.toFixed(2);
+                    const formattedDepositedRow = user.deposited >= 1000
+                        ? user.deposited.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                        : user.deposited.toFixed(2);
 
                     const formattedNameRow = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="wagered">
                                 <img src="rollcoin.png" style="max-width:25px;margin-right: 5px;" />
-                                ${formattedAmountRow.split('.')[0]}<span style="opacity: .5;">.${formattedAmountRow.split('.')[1]}</span>
+                                ${formattedDepositedRow.split('.')[0]}<span style="opacity: .5;">.${formattedDepositedRow.split('.')[1]}</span>
                             </div>
                         </div>
                         <div class="cell">
