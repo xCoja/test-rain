@@ -17,6 +17,14 @@ body, html {
     
 }
 
+.floating-image {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    transform: translateY(-50%);
+    height: auto;
+    z-index: 10;
+}
 
 
 /* Header and nav*/
