@@ -54,7 +54,7 @@ body, html {
 }
 
 .txtt {
-    background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(78, 79, 226), rgb(57, 57, 224));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -66,7 +66,7 @@ body, html {
     text-align: center;
     margin-right: 35px;
     text-decoration: none;
-    background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -81,7 +81,7 @@ body, html {
     transform: translateX(-50%);
     width: 50%;
     height: 3px;
-    background: rgb(255, 206, 48);
+    background: rgb(89, 89, 231);
     border-radius: 2px;
 }
 
@@ -90,7 +90,7 @@ body, html {
 }
 
 .gradient {
-    background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
@@ -151,7 +151,7 @@ body, html {
 .main-content .how-to-participate {
     font-size: 18px;
     margin-top: 20px;   
-    color: rgb(255, 206, 48);
+    color: rgb(89, 89, 231);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -190,11 +190,11 @@ body, html {
 
 .giving-away .bolded {
     font-weight: 1000;
-    color: rgb(255, 206, 48);
+    color: #6af828; 
 }
 
 .pocetak {
-    background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -205,7 +205,7 @@ body, html {
 }
 
 .bolded {
-    background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -213,7 +213,7 @@ body, html {
 }
 
 .color-font-weight {
-   background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+   background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -221,14 +221,14 @@ body, html {
 }
 
 .color {
-   background: linear-gradient(to right, rgb(255, 206, 48), rgb(250, 213, 3));
+    background: linear-gradient(to right, rgb(89, 89, 231), rgb(68, 68, 223));
     background-clip: text;
     -webkit-text-fill-color: transparent;    
     
 }
 
 .ceo-text {
-    background:  rgb(255, 206, 48);
+    background:  rgb(89, 89, 231);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: middle;
@@ -463,11 +463,11 @@ body, html {
 .leader-points {
     font-size: 20px;
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(255, 206, 48);
+    color: rgb(89, 89, 231);
     padding: 5px 15px;
     border-radius: 10px;
     margin-top: 10px;
-    text-shadow: 0 0 9px  rgb(255, 206, 48);
+    text-shadow: 0 0 9px rgb(78, 78, 228);
 }
 
 
@@ -619,7 +619,7 @@ body, html {
 
 .time-value {
     font-size: 30px;
-    color:  rgb(255, 206, 48);
+    color: rgb(89, 89, 231);
     font-weight: bold;
     font-family: "Montserrat"
 }
@@ -642,7 +642,7 @@ body, html {
 .show-winners {
     background: transparent;
     color: white;
-    border: 2px solid  rgb(255, 206, 48);
+    border: 2px solid rgb(89, 89, 231);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -653,7 +653,7 @@ body, html {
 }
 
 .show-winners:hover {
-    border: 2px solid  rgb(255, 206, 48);
+    border: 2px solid rgb(89, 89, 231);
     color: white;
     transform: scale(1.1);
     transition: 0.3s ease;
@@ -784,8 +784,8 @@ body, html {
 }
 
 .prize {
-    color:  rgb(255, 206, 48);
-    text-shadow: 0 0 9px  rgb(255, 206, 48);
+    color: rgb(89, 89, 231);
+    text-shadow: 0 0 9px rgb(89, 89, 231);
     width: 200px; 
     background: #101010;
     border-radius: 5px;
@@ -1022,7 +1022,6 @@ body, html {
         width: 95%;
     }
 }
-
 @media (max-width: 1800px) {
     .image-container img#clashImage,
 .image-container img#csgobigImage,
@@ -1072,12 +1071,13 @@ body, html {
     .header, .main-content, .leaderboard, .leaderboard-entry {
         padding: 5px;
     }
-.logo {
-    display: none;
-  }
+
     .main-content h1 {
         font-size: 28px;
     }
+    .logo {
+    display: none;
+  }
 
     .main-content p {
         font-size: 12px;
@@ -1315,6 +1315,8 @@ body, html {
         flex-direction: column;
         align-items: center; /* Centers the images horizontally */
     }
+
+    
 
     .image-container img#clashImage,
     .image-container img#skinraveImage,
@@ -1919,8 +1921,8 @@ abbr {
 .winners-leader-points {
     font-size: 18px;
     font-weight: bold;
-    color: rgb(255, 206, 48);
-    text-shadow: 0 0 9px rgb(255, 206, 48);
+    color: rgb(89, 89, 231);
+    text-shadow: 0 0 9px rgb(89, 89, 231);
     margin-top: 5px;
     background: #1d1d1d;
     padding: 2px 10px;
@@ -2393,8 +2395,8 @@ justify-content: center;
   display: inline-block;
   padding: 12px 28px;
   background: transparent;
-  color: rgb(243, 208, 52);
-  border: 2px solid rgb(243, 208, 52);
+  color: rgb(89, 89, 231);
+  border: 2px solid rgb(89, 89, 231);
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;

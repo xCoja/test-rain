@@ -1028,7 +1028,7 @@ body, html {
 .image-container img#upgraderImage,
 .image-container img#chickenImage,
 .image-container img#skinraveImage {
-    width: 150px !important;
+    width: 100px !important;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
@@ -1039,16 +1039,17 @@ body, html {
 .image-container img#upgraderImage,
 .image-container img#chickenImage,
 .image-container img#skinraveImage {
-    width: 100px !important;
+    width: 80px !important;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
 }
-@media (max-width: 1000px) {
-   .image-container {
+@media (max-width: 1070px) {
+    .image-container {
         display: flex;
-        flex-direction: column;
-        align-items: center; /* Centers the images horizontally */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* space between items */
     }
 
     .image-container img#clashImage,
@@ -1058,8 +1059,9 @@ body, html {
         width: 140px !important;
         cursor: pointer;
         transition: opacity 0.3s ease;
-        margin-bottom: 10px; /* Adds space between the images */
+        margin-bottom: 0; /* remove bottom margin, using gap instead */
     }
+
     .line {
         display: none; 
     }
@@ -1313,14 +1315,21 @@ body, html {
         align-items: center; /* Centers the images horizontally */
     }
 
-    .image-container img#clashImage,
+     .image-container img#clashImage,
     .image-container img#skinraveImage,
     .image-container img#rainImage,
-    .image-container img#csgobigImage {
-        width: 140px !important;
+    .image-container img#upgraderImage,
+    .image-container img#chickenImage {
+        width: 120px !important;
         cursor: pointer;
         transition: opacity 0.3s ease;
         margin-bottom: 10px; /* Adds space between the images */
+    }
+    .image-container img#upgraderImage {
+        width: 100px !important;
+    }
+    .image-container img#chickenImage {
+        width: 100px !important;
     }
     .image-container img#csgobigImage {
         width: 120px !important;
@@ -1964,7 +1973,7 @@ abbr {
 
 .image-container {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     margin-top: 150px; /* Added margin-top as you requested */
@@ -1977,7 +1986,7 @@ abbr {
 .image-container img#upgraderImage,
 .image-container img#chickenImage,
 .image-container img#skinraveImage {
-    width: 200px;
+    width: 150px;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
