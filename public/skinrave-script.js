@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="leader-name">${formattedName}</div>
                             <div class="leader-wagered">WAGERED:</div>
                             <div class="leader-amount">
-                                <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -3px;">
-                                ${intPart}
-                                <span style="opacity: .5; margin-right: 15spx;">.${decPart}</span>
-                            </div>
+                              <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -3px;">
+                               ${intPart}<span style="opacity: .5; margin-right: 15px;">.${decPart}</span>
+                                </div>
+
                             <div class="leader-points">
                                 <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -3px;" />
                                 <span style="margin-right: 25px">${user.prize}</span>

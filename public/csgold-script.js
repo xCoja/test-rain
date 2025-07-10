@@ -62,11 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${formattedName}
                             </div>
                             <div class="leader-wagered">WAGERED:</div>
-                            <div class="leader-amount">
-                                <img src="csgold-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -5px; transform: rotate(15deg);">
-                                ${user.wagered.toFixed(2).split('.')[0]}
-                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered.toFixed(2).split('.')[1]}</span>
-                            </div>
+                           <div class="leader-amount">
+                           <img src="csgold-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -2px; transform: rotate(15deg);">
+                          ${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0]}<span style="opacity: .5; margin-right: 5px;">.${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1]}</span>
+                          </div>
+
                             <div class="leader-points">
                                 <img src="csgold-coin.svg" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
                                 <span style="margin-right: 25px">${user.prize || 0}</span>

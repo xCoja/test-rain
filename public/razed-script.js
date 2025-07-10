@@ -85,11 +85,11 @@ function handleLeaderboard(leaderboard) {
                 <div class="card-body">
                     <div class="leader-name">${formattedName}</div>
                     <div class="leader-wagered">WAGERED:</div>
-                    <div class="leader-amount">
-                        <img src="logo-value.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -7px;">
-                        ${user.wagered.toFixed(2).split('.')[0]}
-                        <span style="opacity: .5; margin-right: 15px;">.${user.wagered.toFixed(2).split('.')[1]}</span>
-                    </div>
+                   <div class="leader-amount">
+                    <img src="logo-value.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;margin-right: -7px;">
+                    ${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0]}<span style="opacity: .5; margin-right: 15px;">.${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1]}</span>
+                   </div>
+
                     <div class="leader-points">
                         <img src="logo-value.png" style="max-width: 25px;  vertical-align: middle; margin-bottom: 5px; margin-right: -10px;" />
                         <span style="margin-right: 25px">${user.prize}</span>

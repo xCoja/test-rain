@@ -56,10 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${formattedName}
                             </div>
                             <div class="leader-wagered">XP EARNED:</div>
-                            <div class="leader-amount">
-                                <img src="" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -7px;">
-                                ${Math.floor(user.xpEarned || 0)}
+                           <div class="leader-amount">
+                            <img src="" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -7px;">
+                            ${Number(Math.floor(user.xpEarned || 0)).toLocaleString('en-US')}
                             </div>
+
                             <div class="leader-points">
                                 <img src="chicken-coin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -5px;" />
                                 <span style="margin-right: 25px">${user.prize || 0}</span>

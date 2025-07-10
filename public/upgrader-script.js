@@ -71,10 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                  </div>
                             <div class="leader-wagered">WAGERED:</div>
                            <div class="leader-amount">
-                            <img src="upgradercoin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -7px;">
-                              ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
-                                  <span style="opacity: .5; margin-right: 15spx;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
-                               </div>
+                              <img src="upgradercoin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -7px;">
+                               ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
+                           </div>
+
                               <div class="leader-points">
                             <img src="upgradercoin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -8px;" />
                          <span style="margin-right: 25px">${user.prize || 0}</span>

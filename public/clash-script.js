@@ -67,11 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="card-body">
                             <div class="leader-name">${formattedName}</div>
                             <div class="leader-wagered">WAGERED:</div>
-                            <div class="leader-amount">
-                                <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
-                                ${user.wagered ? user.wagered.toFixed(2).split('.')[0] : '0'}
-                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? user.wagered.toFixed(2).split('.')[1] : '00'}</span>
-                            </div>
+                           <div class="leader-amount">
+                             <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
+                             ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
+                          </div>
+
+
                             <div class="leader-points">
                                 <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 3px;margin-right: -5px;" />
                                 <span style="margin-right: 25px">${user.prize}</span>
