@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://api-jonji.jcy.gg/leaderboard-csgo')
+    fetch('https://api-jonji.jcy.gg/leaderboard-razed')
         .then(response => response.json())
         .then(data => {
             handleLeaderboard(data.results || []);
@@ -54,6 +54,10 @@ function handleLeaderboard(leaderboard) {
     displayOrder.forEach((rankIndex, displayIndex) => {
         const user = topThreeUsers[rankIndex];
         if (user) {
+
+           if (user.avatar === "/default-avatar.png") {
+            user.avatar = "razed-pfpp.png"
+           }
             const topUserCard = document.createElement("div");
 
             const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
@@ -102,6 +106,10 @@ function handleLeaderboard(leaderboard) {
 
     leaderboard.slice(3).forEach((user, index) => {
         if (user) {
+
+             if (user.avatar === "/default-avatar.png") {
+            user.avatar = "razed-pfpp.png"
+           }
             const row = document.createElement("div");
             row.classList.add("leaderboard-row");
 

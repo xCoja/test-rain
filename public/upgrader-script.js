@@ -89,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // For the rest (ranks 4-10)
             leaderboard.slice(3).forEach((user, index) => {
                 if (user) {
-                    // Replace censored avatar if necessary
-                    if (user.avatar === "/assets/img/censored_avatar.png") {
-                        user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
+                    
+                    if (user.userId === 0) {
+                        user.avatar = "questionmark.jpg"
                     }
 
                     const row = document.createElement("div");
