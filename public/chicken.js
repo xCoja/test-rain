@@ -1,12 +1,12 @@
-// Define when the current leaderboard ends (fixed)
+
 let currentEndTimeUTC = Date.UTC(2025, 6, 17, 0, 0, 0); 
 
-let period = 7 * 24 * 60 * 60 * 1000; // 14 days
+let period = 7 * 24 * 60 * 60 * 1000; 
 
 function countdown() {
     let now = Date.now();
 
-    // Keep moving the countdown forward if it already passed
+    
     while (currentEndTimeUTC <= now) {
         currentEndTimeUTC += period;
     }
@@ -16,7 +16,7 @@ function countdown() {
         let distance = currentEndTimeUTC - now;
 
         if (distance <= 0) {
-            currentEndTimeUTC += period; // reset countdown
+            currentEndTimeUTC += period; 
             distance = currentEndTimeUTC - now;
         }
 
