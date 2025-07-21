@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard = leaderboard.slice(0, 10);
 
-            // Inject prizes manually
-            const prizes = [500, 250, 125, 50, 25, 10, 10, 10, 10, 10];
-            leaderboard.forEach((user, index) => {
-                user.prize = prizes[index];
-            });
+          
 
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
