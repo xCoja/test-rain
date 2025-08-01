@@ -1,36 +1,33 @@
+let currentEndTimeUTC = Date.UTC(2025, 7, 1, 0, 0, 0); 
+
+let period = 30 * 24 * 60 * 60 * 1000; 
+
 function countdown() {
-    // Set the start time to yesterday at 4:00 PM CET, converted to UTC
-    var startTimeUTC = Date.UTC(2025, 6, 18, 0, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
+    let now = Date.now();
 
-    // Calculate the end time: 14 days after the start time
-    var countDownDate = startTimeUTC + (14 * 24 * 60 * 60 * 1000); // 14 days in milliseconds
+    
+    while (currentEndTimeUTC <= now) {
+        currentEndTimeUTC += period;
+    }
 
-    var x = setInterval(function() {
-        // Get the current time in UTC
-        var now = new Date().getTime();
+    const x = setInterval(() => {
+        now = Date.now();
+        let distance = currentEndTimeUTC - now;
 
-        // Calculate the remaining time
-        var distance = countDownDate - now;
+        if (distance <= 0) {
+            currentEndTimeUTC += period; 
+            distance = currentEndTimeUTC - now;
+        }
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Update the countdown display
         document.getElementById("days").innerHTML = days;
         document.getElementById("hours").innerHTML = hours;
         document.getElementById("minutes").innerHTML = minutes;
         document.getElementById("seconds").innerHTML = seconds;
-
-        // If the countdown is over, stop the timer
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("days").innerHTML = "0";
-            document.getElementById("hours").innerHTML = "0";
-            document.getElementById("minutes").innerHTML = "0";
-            document.getElementById("seconds").innerHTML = "0";
-        }
     }, 1000);
 }
 
