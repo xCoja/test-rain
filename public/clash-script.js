@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return a.acquireTime - b.acquireTime;
             });
 
-            leaderboard = leaderboard.slice(0, 10);
+            leaderboard = leaderboard.slice(0, 15);
 
           
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         user.avatar === "/assets/anonymous.webp" ||
                         user.avatar.includes("/assets/")
                     ) {
-                        user.avatar = "questionmark.jpg";
+                        user.avatar = "avatar-anonymous.png";
                     }
 
                     const topUserCard = document.createElement("div");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         user.avatar === "/assets/anonymous.webp" ||
                         user.avatar.includes("/assets/")
                     ) {
-                        user.avatar = "questionmark.jpg";
+                        user.avatar = "avatar-anonymous.png";
                     }
 
                     const row = document.createElement("div");
