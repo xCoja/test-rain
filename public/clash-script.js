@@ -13,7 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard = leaderboard.slice(0, 10);
 
-          
+            // Manual prizes mapping
+            const prizes = {
+                1: 600,
+                2: 300,
+                3: 125,
+                4: 80,
+                5: 60,
+                6: 10,
+                7: 10,
+                8: 10,
+                9: 10,
+                10: 10
+            };
 
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
@@ -43,10 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                    const formattedWagered = user.wagered >= 1000
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
-
                     let formattedName = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
@@ -54,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     topUserCard.innerHTML = `
                         <div class="card-header">
                             <span class="badge ${rank === 1 ? "badge-first" : rank === 2 ? "badge-second" : "badge-third"}">
-                                ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
+                                ${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}
                             </span>
                             <div class="avatar-container avatar-${rank}">
                                 <img src="${user.avatar}" class="avatar" style="max-width: 96px;" alt="${user.name}'s avatar" />
@@ -63,15 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="card-body">
                             <div class="leader-name">${formattedName}</div>
                             <div class="leader-wagered">WAGERED:</div>
-                           <div class="leader-amount">
-                             <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
-                             ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
-                          </div>
-
-
+                            <div class="leader-amount">
+                                <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 4px;margin-right: -3px;">
+                                ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
+                            </div>
                             <div class="leader-points">
                                 <img src="clashicon.png" style="max-width: 22px; vertical-align: middle; margin-bottom: 3px;margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize}</span>
+                                <span style="margin-right: 25px">${prizes[rank]}</span>
                             </div>
                         </div>
                     `;
@@ -79,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
+            // Other users (4th–10th)
             leaderboard.slice(3).forEach((user, index) => {
                 if (user) {
                     if (
@@ -94,13 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const rank = index + 4;
 
-                    const formattedWageredRow = user.wagered >= 1000
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
-
                     let formattedNameRow = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
+
+                    const formattedWageredRow = user.wagered >= 1000
+                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                        : user.wagered.toFixed(2);
 
                     row.innerHTML = `
                         <div class="cell rank-cell">
@@ -117,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="prize">
                                 <img src="clashicon.png" style="max-width:20px" />
-                                ${user.prize}
+                                ${prizes[rank]}
                             </div>
                         </div>
                     `;
