@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             let leaderboard = data.results || [];
 
-            // Sort as before
             leaderboard.sort((a, b) => {
                 if (b.wagered !== a.wagered) {
                     return b.wagered - a.wagered;
@@ -46,6 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
             displayOrder.forEach((rankIndex) => {
                 const user = topThreeUsers[rankIndex];
                 if (user) {
+                    // 👇 CUSTOM OVERRIDE
+                    if (user.name === "COW CAT 69") {
+                        user.avatar = "questionmark.jpg";
+                    }
+
                     if (user.avatar === "/assets/img/censored_avatar.png") {
                         user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
                     }
@@ -58,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                    // <-- Only here we add commas via locale formatting
                     const parts = user.wagered.toLocaleString('en-US', {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2
@@ -84,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                               <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -3px;">
                                ${intPart}<span style="opacity: .5; margin-right: 15px;">.${decPart}</span>
                                 </div>
-
                             <div class="leader-points">
                                 <img src="logo-value.svg" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -3px;" />
                                 <span style="margin-right: 25px">${user.prize}</span>
@@ -97,6 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboard.slice(3).forEach((user, index) => {
                 if (user) {
+                    // 👇 CUSTOM OVERRIDE
+                    if (user.name === "COW CAT 69") {
+                        user.avatar = "questionmark.jpg";
+                    }
+
                     if (user.avatar === "/assets/img/censored_avatar.png") {
                         user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
                     }
