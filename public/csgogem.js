@@ -1,6 +1,6 @@
-let currentEndTimeUTC = Date.UTC(2025, 6, 10, 0, 0, 0); 
+let currentEndTimeUTC = Date.UTC(2025, 7, 5, 0, 0, 0); 
 
-let period = 14 * 24 * 60 * 60 * 1000; 
+let period = 30 * 24 * 60 * 60 * 1000; 
 
 function countdown() {
     let now = Date.now();
