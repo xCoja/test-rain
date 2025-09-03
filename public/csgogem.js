@@ -1,22 +1,19 @@
-let currentEndTimeUTC = Date.UTC(2025, 7, 5, 0, 0, 0); 
-
-let period = 30 * 24 * 60 * 60 * 1000; 
+let currentEndTimeUTC = Date.UTC(2025, 8, 4, 0, 0, 0); 
 
 function countdown() {
     let now = Date.now();
-
-    
-    while (currentEndTimeUTC <= now) {
-        currentEndTimeUTC += period;
-    }
 
     const x = setInterval(() => {
         now = Date.now();
         let distance = currentEndTimeUTC - now;
 
         if (distance <= 0) {
-            currentEndTimeUTC += period; 
-            distance = currentEndTimeUTC - now;
+            clearInterval(x); // stop the countdown
+            document.getElementById("days").innerHTML = 0;
+            document.getElementById("hours").innerHTML = 0;
+            document.getElementById("minutes").innerHTML = 0;
+            document.getElementById("seconds").innerHTML = 0;
+            return; // exit the interval
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -32,6 +29,7 @@ function countdown() {
 }
 
 countdown();
+
 
 
 function createBubbles() {

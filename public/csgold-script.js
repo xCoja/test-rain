@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
     fetch('https://jonji-api.vercel.app/api/leaderboard/csgold')
         .then(response => response.json())
         .then(data => {
@@ -22,6 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             leaderboardBody.innerHTML = "";
             topThreeSection.innerHTML = "";
+
+            // 🔹 Manual prize mapping (added only this)
+            const manualPrizes = {
+                2: 1000,
+                1: 500,
+                3: 250,
+                4: 125,
+                5: 75,
+                6: 10,
+                7: 10,
+                8: 10,
+                9: 10,
+                10: 10
+            };
 
             const topThreeUsers = leaderboard.slice(0, 3);
             const displayOrder = [1, 0, 2];
@@ -69,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             <div class="leader-points">
                                 <img src="csgold-coin.svg" style="max-width: 25px; transform: rotate(15deg); vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                                <span style="margin-right: 25px">${manualPrizes[rank] || 0}</span>
                             </div>
                         </div>
                     `;
@@ -109,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="prize">
                                 <img src="csgold-coin.svg" style="max-width:25px;margin-right: 5px;transform: rotate(15deg);" />
-                                ${user.prize || 0}
+                                ${manualPrizes[rank] || 0}
                             </div>
                         </div>
                     `;
