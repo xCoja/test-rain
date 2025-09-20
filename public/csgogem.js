@@ -1,4 +1,4 @@
-let currentEndTimeUTC = Date.UTC(2025, 8, 19, 0, 0, 0); 
+let currentEndTimeUTC = Date.UTC(2025, 9, 4, 0, 0, 0); 
 
 function countdown() {
     let now = Date.now();
