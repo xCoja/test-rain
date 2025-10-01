@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             leaderboard = leaderboard.slice(0, 10);
 
            
-            const manualPrizes = [600, 300, 125, 80, 60, 10, 10, 10, 10, 10];
+            const manualPrizes = [700, 400, 150, 100, 75, 10, 10, 10, 10, 10];
             leaderboard.forEach((user, index) => {
                 user.prize = manualPrizes[index];
             });
