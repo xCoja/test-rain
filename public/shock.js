@@ -1,19 +1,22 @@
-let currentEndTimeUTC = Date.UTC(2025, 9, 0, 0, 0, 0); 
+let currentEndTimeUTC = Date.UTC(2025, 7, 2, 0, 0, 0); 
+
+let period = 30 * 24 * 60 * 60 * 1000; 
 
 function countdown() {
     let now = Date.now();
+
+    
+    while (currentEndTimeUTC <= now) {
+        currentEndTimeUTC += period;
+    }
 
     const x = setInterval(() => {
         now = Date.now();
         let distance = currentEndTimeUTC - now;
 
         if (distance <= 0) {
-            clearInterval(x); // stop the countdown
-            document.getElementById("days").innerHTML = 0;
-            document.getElementById("hours").innerHTML = 0;
-            document.getElementById("minutes").innerHTML = 0;
-            document.getElementById("seconds").innerHTML = 0;
-            return; // exit the interval
+            currentEndTimeUTC += period; 
+            distance = currentEndTimeUTC - now;
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -30,7 +33,6 @@ function countdown() {
 
 countdown();
 
-
 function createBubbles() {
     const bubblesContainer = document.querySelector('.bubbles-container');
     const bubbleCount = 100;
@@ -43,7 +45,7 @@ function createBubbles() {
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}%`;
         bubble.style.animationDelay = `${Math.random() * 15}s`;
-        bubble.style.background = `rgb(78, 78, 228, ${Math.random() * 0.5 + 0.2})`;
+        bubble.style.background = `rgb(42, 117, 255, ${Math.random() * 0.5 + 0.2})`;
 
         bubblesContainer.appendChild(bubble);
     }
