@@ -59,6 +59,19 @@ claimButtons.forEach(btn => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('claim-bonus-overlay');
+  const closeBtn = document.getElementById('claim-bonus-close');
+
+  document.querySelectorAll('[data-action="claim"]').forEach(btn => {
+    btn.addEventListener('click', () => overlay.style.display = 'flex');
+  });
+
+  closeBtn?.addEventListener('click', () => overlay.style.display = 'none');
+  overlay?.addEventListener('click', e => { if (e.target === overlay) overlay.style.display = 'none'; });
+});
+
+
 
 
 // ===== Claim Bonus Popup (for all card buttons) =====
