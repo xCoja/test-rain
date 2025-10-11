@@ -89,11 +89,11 @@
     display: flex;
     justify-content: center; /* Center the nav content */
     z-index: 1000;
-    background: linear-gradient(to right, #ff0000, #ff0000);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-left: 30px;
+    margin-left: 35px;
 }
+
+.nav a.nav-red  { color: #ff2b2b; }   /* Points Store */
+.nav a.nav-blue { color: #2a4bdf; }   /* Shock Rewards */
 
 .txtt {
     background: linear-gradient(to right, #2a75ff, #014bd4);
@@ -1204,3 +1204,15 @@ body {
   .level-name { font-size: .95rem; }
   .level-wager, .level-reward { font-size: .95rem; }
 }
+/* override gradient text for specific links */
+.nav a.nav-red,
+.nav a.nav-blue {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: currentColor !important; /* use the color property */
+}
+
+/* now the colors work */
+.nav a.nav-red  { color: #ff2b2b !important; }  /* Points Store */
+.nav a.nav-blue { color: #2a4bdf !important; }  /* Shock Rewards */
