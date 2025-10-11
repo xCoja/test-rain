@@ -882,11 +882,17 @@ body {
     }
 }
 
+
 @media (max-width: 450px) {
     .nav a {
         font-size: 12px;
+        
+    }
+    .nav {
+        margin-right: -25px;
     }
 }
+
 
 @media (max-width: 425px) {
     .card-wrap {
