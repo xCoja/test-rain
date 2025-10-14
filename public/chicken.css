@@ -28,8 +28,20 @@ body, html {
     left: 0;
     z-index: 1000;
 }
-
-
+.nav-toggle {
+    display:none;
+    position:absolute;
+    right:26px;
+    top:50%;
+    transform:
+    translateY(-50%);
+    background:transparent;
+    border:0; color:#fff;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+            
+}
 .logo {
     position: absolute; /* Position the logo absolutely */
     left: 20px; /* Adjust this value as needed */
@@ -1076,7 +1088,7 @@ body, html {
         font-size: 28px;
     }
      .logo {
-        display: none;
+       
      }
     .main-content p {
         font-size: 12px;
@@ -2419,9 +2431,7 @@ justify-content: center;
 }
 }
 @media (max-width: 850px) {
-    .logo img {
-        display: none;
-    }
+    
     .nav {
         margin-left: 2px;
     }
@@ -2468,3 +2478,24 @@ justify-content: center;
   transform: translateY(-1px) scale(1.05);
 }
 
+@media (max-width: 768px){
+  .header{height:80px;}
+  .logo img{height:80px;}
+
+  .nav-toggle{display:block;}           /* prikaži hamburger */
+  .nav{
+    position:fixed; top:80px; left:0; right:0;
+    flex-direction:column; gap:0; background:#0f0f0f; border-top:1px solid #1a1a1a;
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+  }
+  .nav[data-open="true"]{ max-height: 260px; }  /* otvoren meni */
+  .nav .nav-link{
+    padding:14px 18px; font-size:16px; border-bottom:1px solid #1a1a1a;
+    padding-left: 50px;
+    /* na mobu koristi pune boje radi čitljivosti */
+    background:none; -webkit-text-fill-color: initial; color:#d89504;
+  }
+  .nav .nav-link.nav-red{ color:#ff2b2b !important; }
+  .nav .nav-link.nav-blue{ color:#2a4bdf !important; }
+  .nav .nav-link.active::after{ display:none; } /* bez underline u dropdownu */
+}

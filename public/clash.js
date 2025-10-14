@@ -165,6 +165,26 @@ popupOverlayWinners.addEventListener('click', (event) => {
 
 
 
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.getAttribute('data-open') === 'true';
+    nav.setAttribute('data-open', String(!isOpen));
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    document.body.style.overflow = isOpen ? '' : 'hidden'; // sprečava pomeranje stranice na mobilu
+  });
+
+  // Zatvori meni kad klikneš link
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.setAttribute('data-open', 'false');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+}
 
 
 

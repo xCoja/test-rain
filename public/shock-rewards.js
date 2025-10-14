@@ -136,7 +136,14 @@ document.addEventListener('keydown', (e) => {
 
 
 
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
 
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.getAttribute('data-open') === 'true';
+    nav.setAttribute('data-open', String(!isOpen));
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
 
 
 
