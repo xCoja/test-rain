@@ -1,157 +1,142 @@
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('https://jonji-api.vercel.app/api/leaderboard/csbattle')
+    .then(response => response.json())
+    .then(data => {
+      // Normalize API → UI fields
+      const raw = Array.isArray(data?.players) ? data.players : [];
+      let leaderboard = raw.map(p => ({
+        name: p?.username ?? "Anon",
+        avatar: p?.profilePicture ?? "/assets/img/censored_avatar.png",
+        wagered: Number(p?.wageredAmount ?? 0),
+        
+        apiReward: Number(p?.reward ?? 0),
+        prize: 0,
+        acquireTime: typeof p?.acquireTime === "number"
+          ? p.acquireTime
+          : (p?.acquireTime ? new Date(p.acquireTime).getTime() : 0)
+      }));
 
-document.addEventListener("DOMContentLoaded", () => { 
-    fetch('https://jonji-api.vercel.app/api/leaderboard/csgoroll')
-        .then(response => response.json())
-        .then(data => {
-            let leaderboard = data.players || [];
+      // Sort by wagered desc, then acquireTime asc
+      leaderboard.sort((a, b) => {
+        if (b.wagered !== a.wagered) return b.wagered - a.wagered;
+        return a.acquireTime - b.acquireTime;
+      });
 
-            leaderboard.forEach(user => {
-                user.wagered = parseFloat(user.wagered) || 0;
-            });
+      // Top 10
+      leaderboard = leaderboard.slice(0, 10);
 
-            /* ---------------------- FILLERS (ADDED) ---------------------- */
-            // Create a filler that always sorts after real users
-            const makeFiller = () => ({
-                name: "_",
-                avatar: "questionmark.jpg",
-                wagered: 0, // shows as 0.00 in your UI
-                acquireTime: Number.MAX_SAFE_INTEGER
-            });
+      
+      const manualPrizes = [700, 350, 175, 100, 75, 20, 20, 20, 20, 20];
+      leaderboard.forEach((u, i) => { u.prize = manualPrizes[i] ?? 0; });
 
-            // Ensure there are 10 entries in total by padding with fillers
-            if (leaderboard.length < 10) {
-                const need = 10 - leaderboard.length;
-                for (let i = 0; i < need; i++) {
-                    leaderboard.push(makeFiller());
-                }
-            }
-            /* -------------------- END FILLERS (ADDED) -------------------- */
+      const topThreeSection = document.querySelector(".top-three");
+      const leaderboardBody = document.querySelector(".leaderboard-body");
+      leaderboardBody.innerHTML = "";
+      topThreeSection.innerHTML = "";
 
-            leaderboard.sort((a, b) => {
-                if (b.wagered !== a.wagered) {
-                    return b.wagered - a.wagered;
-                }
-                return a.acquireTime - b.acquireTime;
-            });
+      // Top 3 users, display order: 2nd, 1st, 3rd
+      const topThreeUsers = leaderboard.slice(0, 3);
+      const displayOrder = [1, 0, 2];
 
-            leaderboard = leaderboard.slice(0, 10);
+      displayOrder.forEach((rankIndex) => {
+        const user = topThreeUsers[rankIndex];
+        if (!user) return;
 
-            const topThreeSection = document.querySelector(".top-three");
-            const leaderboardBody = document.querySelector(".leaderboard-body");
+        // Avatar corrections
+        if (user.avatar === "/assets/img/censored_avatar.png") {
+          user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
+        }
+        if (user.avatar === "/shock.png") {
+          user.avatar = "shock.png";
+        }
+        if (user.avatar === "/csbattle_coin.svg") {
+          user.avatar = "questionmark.jpg";
+        }
 
-            leaderboardBody.innerHTML = "";
-            topThreeSection.innerHTML = "";
+        const topUserCard = document.createElement("div");
+        const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
+        topUserCard.classList.add(
+          "card",
+          rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
+        );
 
-            // 🔹 Manual prize mapping (added only this)
-            const manualPrizes = {
-                2: 700,
-                1: 350,
-                3: 175,
-                4: 100,
-                5: 75,
-                6: 20,
-                7: 20,
-                8: 20,
-                9: 20,
-                10: 20
-            };
+        const formattedWagered =
+          user.wagered >= 1000
+            ? user.wagered.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            : user.wagered.toFixed(2);
 
-            const topThreeUsers = leaderboard.slice(0, 3);
-            const displayOrder = [1, 0, 2];
+        const safeName = String(user.name ?? "Anon");
+        const formattedName =
+          safeName.length > 3 ? safeName.slice(0, 3) + "****" : safeName.slice(0, 1) + "****";
 
-            displayOrder.forEach((rankIndex) => {
-                const user = topThreeUsers[rankIndex];
-                if (user) {
-                    const topUserCard = document.createElement("div");
+        topUserCard.innerHTML = `
+          <div class="card-header">
+            <span class="badge ${rank === 1 ? "badge-first" : rank === 2 ? "badge-second" : "badge-third"}">
+              ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
+            </span>
+            <div class="avatar-container avatar-${rank}">
+              <img src="${user.avatar}" class="avatar" alt="${safeName}'s avatar" />
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="leader-name">${formattedName}</div>
+            <div class="leader-wagered">WAGERED:</div>
+            <div class="leader-amount">
+              <img src="csbattle-coin.svg" style="max-width: 19px; vertical-align: middle; margin-bottom: 2px; margin-right: -3px;">
+              ${formattedWagered.split('.')[0]}
+              <span style="opacity: .5; margin-right: 15px;">.${formattedWagered.split('.')[1]}</span>
+            </div>
+            <div class="leader-points">
+              <img src="csbattle-coin.svg" style="max-width: 19px; vertical-align: middle; margin-bottom: 3px; margin-right: -3px;" />
+              <span style="margin-right: 25px">${user.prize}</span>
+            </div>
+          </div>
+        `;
+        topThreeSection.appendChild(topUserCard);
+      });
 
-                    const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
+      // Ranks 4–10
+      leaderboard.slice(3).forEach((user, index) => {
+        if (!user) return;
 
-                    topUserCard.classList.add(
-                        "card",
-                        rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
-                    );
+        if (user.avatar === "/shock.png") user.avatar = "shock.png";
+        if (user.avatar === "/csbattle_coin.svg") user.avatar = "questionmark.jpg";
 
-                    const formattedWagered = user.wagered >= 1000 
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
+        const row = document.createElement("div");
+        row.classList.add("leaderboard-row");
+        const rank = index + 4;
 
-                    let formattedName = user.name.length > 3
-                        ? user.name.slice(0, 3) + "****"
-                        : user.name.slice(0, 1) + "****";
+        const formattedWageredRow =
+          user.wagered >= 1000
+            ? user.wagered.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            : user.wagered.toFixed(2);
 
-                    // Keep your existing mapping; fillers use questionmark.jpg directly
-                    const avatarSrc = (user.avatar === '/csgold.png') ? 'csgold.png' : user.avatar;
+        const safeName = String(user.name ?? "Anon");
+        const formattedNameRow =
+          safeName.length > 3 ? safeName.slice(0, 3) + "****" : safeName.slice(0, 1) + "****";
 
-                    topUserCard.innerHTML = `
-                        <div class="card-header">
-                            <span class="badge ${rank === 1 ? "badge-first" : rank === 2 ? "badge-second" : "badge-third"}">
-                                ${rank === 1 ? "2nd" : rank === 2 ? "1st" : "3rd"}
-                            </span>
-                            <div class="avatar-container avatar-${rank}">
-                                <img src="${avatarSrc}" class="avatar" alt="${user.name}'s avatar" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="leader-name">
-                                ${formattedName}
-                            </div>
-                            <div class="leader-wagered">WAGERED:</div>
-                           <div class="leader-amount">
-                           <img src="csbattle-coin.svg" style="max-width: 19px; vertical-align: middle; margin-bottom: 2px;margin-right: -2px;">
-                          ${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0]}<span style="opacity: .5; margin-right: 5px;">.${Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1]}</span>
-                          </div>
-
-                            <div class="leader-points">
-                                <img src="csbattle-coin.svg" style="max-width: 19px; vertical-align: middle; margin-bottom: 5px; margin-right: -5px;" />
-                                <span style="margin-right: 13px">${manualPrizes[rank] || 0}</span>
-                            </div>
-                        </div>
-                    `;
-                    topThreeSection.appendChild(topUserCard);
-                }
-            });
-
-            leaderboard.slice(3).forEach((user, index) => {
-                if (user) {
-                    const row = document.createElement("div");
-                    row.classList.add("leaderboard-row");
-
-                    const rank = index + 4;
-
-                    const formattedWageredRow = user.wagered >= 1000
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
-
-                    let formattedNameRow = user.name.length > 3
-                        ? user.name.slice(0, 3) + "****"
-                        : user.name.slice(0, 1) + "****";
-
-                    const avatarSrcRow = (user.avatar === '/csgold.png') ? 'csgold.png' : user.avatar;
-
-                    row.innerHTML = `
-                        <div class="cell rank-cell">
-                            <span class="rank">#${rank}</span>
-                            <img src="${avatarSrcRow}" class="avatar" alt="${user.name}'s avatar" />
-                            <span class="name">${formattedNameRow}</span>
-                        </div>
-                        <div class="cell">
-                            <div class="wagered">
-                                <img src="csbattle-coin.svg" style="max-width:19px;margin-right: 5px;" />
-                                ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="prize">
-                                <img src="csbattle-coin.svg" style="max-width:19px;margin-right: 5px;" />
-                                ${manualPrizes[rank] || 0}
-                            </div>
-                        </div>
-                    `;
-
-                    leaderboardBody.appendChild(row);
-                }
-            });
-        })
-        .catch(error => console.error("Error fetching leaderboard data:", error));
+        row.innerHTML = `
+          <div class="cell rank-cell">
+            <span class="rank">#${rank}</span>
+            <img src="${user.avatar}" class="avatar" alt="${safeName}'s avatar" />
+            <span class="name">${formattedNameRow}</span>
+          </div>
+          <div class="cell">
+            <div class="wagered">
+              <img src="csbattle-coin.svg" style="max-width:19px" />
+              ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="prize">
+              <img src="csbattle-coin.svg" style="max-width:19px" />
+              ${user.prize}
+            </div>
+          </div>
+        `;
+        leaderboardBody.appendChild(row);
+      });
+    })
+    .catch(error => console.error("Error fetching leaderboard data:", error));
 });
 
