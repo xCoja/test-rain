@@ -214,6 +214,25 @@ popupOverlayContact.addEventListener('click', (event) => {
         popupOverlayContact.style.display = 'none';
     }
 });
+ const modal = document.getElementById("policyModal");
+  const openBtn = document.getElementById("openPolicy");
+  const closeBtn = document.querySelector(".close");
+
+  openBtn.onclick = function (e) {
+    e.preventDefault();
+    modal.style.display = "block";
+  };
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Close modal if user clicks outside the box
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 
 // Disclaimer Popup
 const disclaimerButton = document.getElementById('disclaimer-button');

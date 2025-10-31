@@ -67,7 +67,7 @@ body, html {
 }
 
 .txtt {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+    background: linear-gradient(to right, #2a75ff, #014bd4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -2501,4 +2501,64 @@ justify-content: center;
   .nav .nav-link.nav-red{ color:#ff2b2b !important; }
   .nav .nav-link.nav-blue{ color:#2a4bdf !important; }
   .nav .nav-link.active::after{ display:none; } /* bez underline u dropdownu */
+}
+
+
+
+/* Modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #1b1b1b;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #333;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  color: #d1d1d1;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Title */
+.modal-content h2 {
+  color: #ffcc00;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Close button */
+.close {
+  color: #ffcc00;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* List styling */
+.modal-content ul {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.modal-content li {
+  margin-bottom: 0.5rem;
 }
