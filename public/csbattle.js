@@ -1,4 +1,4 @@
-let currentEndTimeUTC = Date.UTC(2025, 10, 14, 0, 0, 0); 
+let currentEndTimeUTC = Date.UTC(2025, 10, 16, 0, 0, 0); 
 
 let period = 14 * 24 * 60 * 60 * 1000; 
 
