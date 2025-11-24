@@ -27,7 +27,9 @@ body, html {
     top: 0;
     left: 0;
     z-index: 1000;
+    
 }
+
 .nav-toggle {
     display:none;
     position:absolute;
@@ -61,10 +63,11 @@ body, html {
   justify-content: center;
   z-index: 1000;
   margin-left: 70px;
+  
 }
 
 .txtt {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+    background: linear-gradient(to right, #eebe7c, #f0bd76);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -76,7 +79,8 @@ body, html {
   text-align: center;
   margin-right: 35px;
   text-decoration: none;
-  color: #d89504;              
+  color: #2a4bdf;   
+         
 }
 
 .nav a.nav-red  { color: #ff2b2b; }   /* Points Store */
@@ -91,16 +95,17 @@ body, html {
   transform: translateX(-50%);
   width: 50%;
   height: 3px;
-  background: #f1d65e;
+  background: #2a4bdf;
   border-radius: 2px;
 }
+
 
 .nav a:hover {
     filter: brightness(1.3);
 }
 
 .gradient {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+    background: linear-gradient(to right, #2a75ff, #014bd4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
@@ -148,7 +153,7 @@ body, html {
 
 .main-content .cta-button {
     font-size: 24px;
-    background: #e67e22;
+    background: #eebe7c;
     color: white;
     display: inline-block;
     padding: 10px 20px;
@@ -161,7 +166,7 @@ body, html {
 .main-content .how-to-participate {
     font-size: 18px;
     margin-top: 20px;   
-    color: #f8d406;
+    color: #eebe7c;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -204,7 +209,7 @@ body, html {
 }
 
 .pocetak {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+    background: linear-gradient(to right, #eebe7c, #f0bd76);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -215,7 +220,7 @@ body, html {
 }
 
 .bolded {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+     background: linear-gradient(to right, #eebe7c, #f0bd76);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
@@ -223,23 +228,22 @@ body, html {
 }
 
 .color-font-weight {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+    background: linear-gradient(to right, #eebe7c, #f0bd76);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 1000;
     vertical-align: middle;
-    
 }
 
 .color {
-    background: linear-gradient(to right, #f1d65e, #d89504);
+     background: linear-gradient(to right, #eebe7c, #f0bd76);
     background-clip: text;
     -webkit-text-fill-color: transparent;    
     
 }
 
 .ceo-text {
-    background:  #eeb704;
+    background: #eebe7c;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: middle;
@@ -340,55 +344,6 @@ body, html {
 
 
 
-/* .avatar-container::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: conic-gradient(from var(--angle), transparent 30%, rgb(247, 223, 9));
-    padding: 3px;
-    border-radius: 50%;
-    z-index: 0;
-    animation: 2s spin linear infinite;
-}
-
-.avatar-container::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: conic-gradient(from var(--angle), transparent 30%, rgb(247, 223, 9));
-    padding: 3px;
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(1.5rem);
-    opacity: 0.5;
-    animation: 2s spin linear infinite;
-}
-
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-    to {
-        --angle: 360deg;
-    }
-} */
-
-
-
 
 
 
@@ -474,11 +429,11 @@ body, html {
 .leader-points {
     font-size: 20px;
     background: rgba(255, 255, 255, 0.1);
-    color: #f1d119;
+    color: #eebe7c;
     padding: 5px 15px;
     border-radius: 10px;
     margin-top: 10px;
-    text-shadow: 0 0 9px #f1d119;
+    text-shadow: 0 0 9px #eebe7c;
 }
 
 
@@ -630,7 +585,7 @@ body, html {
 
 .time-value {
     font-size: 30px;
-    color: #ffd105;
+    color: #eebe7c;
     font-weight: bold;
     font-family: "Montserrat"
 }
@@ -653,7 +608,7 @@ body, html {
 .show-winners {
     background: transparent;
     color: white;
-    border: 2px solid #ffd105;
+    border: 2px solid #eebe7c;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -664,7 +619,7 @@ body, html {
 }
 
 .show-winners:hover {
-    border: 2px solid #f5e505;
+    border: 2px solid #eebe7c;
     color: white;
     transform: scale(1.1);
     transition: 0.3s ease;
@@ -795,8 +750,8 @@ body, html {
 }
 
 .prize {
-    color: #ffd105;
-    text-shadow: 0 0 9px #ffd105;
+    color: #eebe7c;
+    text-shadow: 0 0 9px #eebe7c;
     width: 200px; 
     background: #101010;
     border-radius: 5px;
@@ -915,8 +870,9 @@ body, html {
     display: block;
     font-size: 14px;
     margin-left: 30px;
-     margin-top: -5px;
+    margin-top: -5px;
     font-family: 'Poppins', sans-serif;
+    
     
 }
 
@@ -1035,51 +991,6 @@ body, html {
     }
 }
 
-@media (max-width: 1800px) {
-    .image-container img#clashImage,
-.image-container img#csgobigImage,
-.image-container img#upgraderImage,
-.image-container img#chickenImage,
-.image-container img#skinraveImage {
-    width: 100px !important;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-}
-@media (max-width: 1400px) {
-    .image-container img#clashImage,
-.image-container img#csgobigImage,
-.image-container img#upgraderImage,
-.image-container img#chickenImage,
-.image-container img#skinraveImage {
-    width: 80px !important;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-}
-@media (max-width: 1070px) {
-    .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px; /* space between items */
-    }
-
-    .image-container img#clashImage,
-    .image-container img#skinraveImage,
-    .image-container img#rainImage,
-    .image-container img#csgobigImage {
-        width: 140px !important;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        margin-bottom: 0; /* remove bottom margin, using gap instead */
-    }
-
-    .line {
-        display: none; 
-    }
-}
-
 @media (max-width: 576px) {
     .header, .main-content, .leaderboard, .leaderboard-entry {
         padding: 5px;
@@ -1088,9 +999,8 @@ body, html {
     .main-content h1 {
         font-size: 28px;
     }
-     .logo {
-       
-     }
+  
+
     .main-content p {
         font-size: 12px;
     }
@@ -1149,6 +1059,50 @@ body, html {
     }
 }
 
+@media (max-width: 1800px) {
+    .image-container img#clashImage,
+.image-container img#csgobigImage,
+.image-container img#upgraderImage,
+.image-container img#chickenImage,
+.image-container img#skinraveImage {
+    width: 100px !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+}
+@media (max-width: 1400px) {
+    .image-container img#clashImage,
+.image-container img#csgobigImage,
+.image-container img#upgraderImage,
+.image-container img#chickenImage,
+.image-container img#skinraveImage {
+    width: 80px !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+}
+@media (max-width: 1070px) {
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* space between items */
+    }
+
+    .image-container img#clashImage,
+    .image-container img#skinraveImage,
+    .image-container img#rainImage,
+    .image-container img#csgobigImage {
+        width: 140px !important;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        margin-bottom: 0; /* remove bottom margin, using gap instead */
+    }
+
+    .line {
+        display: none; 
+    }
+}
 @media (max-width: 1018px) {
     .card {
         
@@ -1931,8 +1885,8 @@ abbr {
 .winners-leader-points {
     font-size: 18px;
     font-weight: bold;
-    color: #f3d007;
-    text-shadow: 0 0 9px #f3d007;
+    color: #eebe7c;
+    text-shadow: 0 0 9px #eebe7c;
     margin-top: 5px;
     background: #1d1d1d;
     padding: 2px 10px;
@@ -2351,8 +2305,6 @@ justify-content: center;
     
 }
 
-
-
 .diamond-icon4 img {
     max-width: 15px;
     margin-left: 5px;
@@ -2392,6 +2344,8 @@ justify-content: center;
    
 }
 
+
+
 .store-section {
   text-align: center;
   margin: 60px 0; /* Add spacing between sections */
@@ -2407,8 +2361,8 @@ justify-content: center;
   display: inline-block;
   padding: 12px 28px;
   background: transparent;
-  color: rgb(255, 174, 0);
-  border: 2px solid rgb(255, 174, 0);
+  color: #eebe7c;
+  border: 2px solid #eebe7c;
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
@@ -2422,7 +2376,6 @@ justify-content: center;
   transition: 0.3s ease;
 }
 
-
 @media (max-width: 850px) {
     .nav a {
     
@@ -2432,7 +2385,7 @@ justify-content: center;
 }
 }
 @media (max-width: 850px) {
-    
+   
     .nav {
         margin-left: 2px;
     }
@@ -2463,6 +2416,7 @@ justify-content: center;
         margin-left: -10px;
     }
 }
+
 /* shock logo in nav */
 .shock-logo {
   width: 22px;                 /* adjust size as needed */
@@ -2478,6 +2432,7 @@ justify-content: center;
   opacity: 1;
   transform: translateY(-1px) scale(1.05);
 }
+
 
 @media (max-width: 768px){
   .header{height:80px;}
