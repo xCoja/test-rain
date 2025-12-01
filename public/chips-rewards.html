@@ -32,7 +32,7 @@
       "@type": "WebSite",
       "name": "Jonji - Leaderboard",
       "url": "https://jonji.bet",
-      "description": ""Participate in Jonji's Chips.gg leaderboard and compete for prizes every month! Check out the latest updates, participate using code JONJI, and win great prizes!",
+      "description": "Participate in Jonji's Chips.gg leaderboard and compete for prizes every month! Check out the latest updates, participate using code JONJI, and win great prizes!",
       "publisher": {
         "@type": "Organization",
         "name": "Jonji"
@@ -52,14 +52,9 @@
 </head>
 <body>
 
-<!-- Reward Banner -->
-
-
-
 <div class="bubbles-container"></div>
 
-
-    <div class="header">
+<div class="header">
   <div class="logo">
     <a href="index.html"><img src="jonji-logo.png" class="Chips" alt="Jonji logo"></a>
   </div>
@@ -71,16 +66,22 @@
     <a href="index.html" class="nav-link">LEADERBOARD</a>
     <a href="https://store.jonji.bet/" class="nav-link nav-red">POINTS STORE</a>
     <a href="chips-rewards.html" class="nav-link nav-blue active">
-     CHIPS REWARDS
+      CHIPS REWARDS
       <img src="chips.png" alt="Chips logo" class="shock-logo">
     </a>
   </nav>
 </div>
 
-    
 <br><br><br><br><br><br>
-      <!-- Reward Banner -->
-<!-- Reward Banner -->
+
+<!--
+  ===============================
+  ORIGINAL MAIN CONTENT (HIDDEN)
+  ===============================
+  Commented out so you can bring it back later.
+-->
+
+<!--
 <section class="reward-banner">
   <div class="rb-wrap">
     <div class="rb-top">
@@ -110,17 +111,11 @@
     </div>
   </div>
 </section>
+-->
 
+<div class="glow-container"></div>
 
-
-    <div class="glow-container"></div>
-
-        
-
-  
-
-<!-- Shock Rewards – Centered Rank List -->
-<!-- Shock Rewards – All Claimable -->
+<!--
 <section id="shock-ranks" class="levels">
   <div class="levels-wrap">
 
@@ -246,17 +241,9 @@
 
   </div>
 </section>
+-->
 
-
-        
-    
-            
-         
-
-    <br><br><br><br>
-
- 
-
+<!--
 <div class="claim-bonus-overlay" id="claim-bonus-overlay">
   <div class="claim-bonus-content">
     <button class="claim-bonus-close" id="claim-bonus-close">&times;</button>
@@ -271,89 +258,82 @@
     </ol>
   </div>
 </div>
+-->
 
+<!-- =========================
+     NEW COMING SOON SECTION
+     ========================= -->
+<main class="cs-main">
+  <section class="cs-wrapper">
+    <div class="cs-card">
+      <div class="cs-glow-orb"></div>
+      <div class="cs-glow-orb cs-glow-orb--red"></div>
 
+      <div class="cs-pill">
+        <span class="cs-pill-dot"></span>
+        JONJI × CHIPS REWARDS
+        <span class="cs-pill-label">COMING SOON</span>
+      </div>
 
-  </main>
-            
-            
-            
+      <h1 class="cs-title">
+        Exclusive <span class="cs-highlight-red">rewards</span><br>
+        <span class="cs-highlight-blue">coming soon</span>
+      </h1>
 
-            
+      <p class="cs-subtitle">
+        We’re cooking up a brand new <span>VIP rewards system</span> with wager bonuses,
+        unique perks and more. It’s not live just yet – but you can already plug into the
+        community and be first to know when it drops.
+      </p>
 
-
-            
-            
-       
-    
-        
-
-
-   
-       
-
-
-        
-
-
-        
-
-
-
-        
-
-        
-
-
-
-        
-
-        
-
-       
-
-        
-
-
-        
-
-        
-        
-        
-        
-            
-
-    
- 
-    
-    
-    
- 
-
-
-   
-
-    <div class="popup-overlay" id="popup-overlay-winners">
-        <div class="popup-content winners-popup-content">
-            <button class="popup-close" id="popup-close-winners">&times;</button>
-            <h2> there are no previous winners yet.</h2>
-            <hr style="width: 100%;">
-    
-            
+      <div class="cs-meta-row">
+        <div class="cs-meta-item">
+          <span class="cs-dot"></span> Jonji × Chips exclusive collab
         </div>
+        <div class="cs-meta-item">
+          <span class="cs-dot"></span> Wager-based rewards & milestones
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-dot"></span> Launch date announced soon
+        </div>
+      </div>
+
+      <div class="cs-actions">
+        <a href="https://discord.gg/vQtC77g7vr" target="_blank" class="cs-btn cs-btn-primary">
+          <i class="fab fa-discord"></i>
+          Join Discord for updates
+        </a>
+        <a href="https://x.com/jonjiponji" target="_blank" class="cs-btn cs-btn-ghost">
+          <i class="fab fa-twitter"></i>
+          Follow on X
+        </a>
+      </div>
+
+      <p class="cs-tagline">
+        Stay tuned • Play responsibly • Rewards may be subject to terms
+      </p>
+
+      <!-- Small Chips logo in top right corner -->
+      <img src="chips.png" alt="Chips logo" class="cs-corner-chip">
+
     </div>
+  </section>
+</main>
 
-
-
-
-
-
-
+<!-- Winners popup (commented, belongs to old system) -->
+<!--
+<div class="popup-overlay" id="popup-overlay-winners">
+  <div class="popup-content winners-popup-content">
+      <button class="popup-close" id="popup-close-winners">&times;</button>
+      <h2> there are no previous winners yet.</h2>
+      <hr style="width: 100%;">
+  </div>
+</div>
+-->
 
 <div id="popup-overlay-contact" class="popup-overlay">
     <div class="popup-content">
         <span id="popup-close-contact" class="popup-close">&times;</span>
-        <!-- Add content from contact.html here -->
         <div class="contact">
             <h1>Get in <span style="color: orange;">Touch</span>!</h1>
             <div class="contact-col">
@@ -370,15 +350,11 @@
 <div id="popup-overlay-disclaimer" class="popup-overlay">
     <div class="popup-content">
         <span id="popup-close-disclaimer" class="popup-close">&times;</span>
-        <!-- Add content from contact.html here -->
         <div class="disclaimer">
             <h1>Disclaimer</h1>
             <hr>
 
-            <p>This website does not promote or encourage gambling. It is designed solely to provide a leaderboard for users to track their wagered points from other platforms. We do not offer any gambling services or accept any form of wagers on this site. We strongly support responsible gambling and advise users to know their limits and play responsibly.
-
-            </p>
-            
+            <p>This website does not promote or encourage gambling. It is designed solely to provide a leaderboard for users to track their wagered points from other platforms. We do not offer any gambling services or accept any form of wagers on this site. We strongly support responsible gambling and advise users to know their limits and play responsibly.</p>
         </div>
     </div>
 </div>
@@ -386,17 +362,13 @@
 <div id="popup-overlay-claimbutton" class="popup-overlay">
     <div class="popup-content">
         <span id="popup-close-claimbutton" class="popup-close">&times;</span>
-        <!-- Add content from contact.html here -->
         <div class="claim-button2">
             <h1>Learn More</h1>
             <hr>
-
-            <h4>To view more information about our VIP Rewards system you can check out our <a href="https://discord.gg/vQtC77g7vr" target="_blank">discord</a> server.</h3>
-            
+            <h4>To view more information about our VIP Rewards system you can check out our <a href="https://discord.gg/vQtC77g7vr" target="_blank">discord</a> server.</h4>
         </div>
     </div>
 </div>
-
 
 <!-- Footer Section -->
 <footer class="footer">
@@ -412,8 +384,8 @@
                 <a href="https://x.com/jonjiponji" target="_blank" class="social-icon" id="fa-twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://kick.com/jonjiponji" target="_blank" class="social-icon" id="kick"><img src="kick-footer.png" alt="KICK" class="kick-img" style="height: 20px;"></a>
             </div>
-            
         </div>
+
         <div class="footer-column">
             <h3>GO TO</h3>
             <ul>
@@ -421,7 +393,6 @@
                 <li><a href="https://www.youtube.com/@jonjiponji" target="_blank">Youtube</a></li>
                 <li><a href="https://discord.gg/vQtC77g7vr" target="_blank">Discord</a></li>
                 <li><a href="https://x.com/jonjiponji" target="_blank">Twitter</a></li>
-                
             </ul>
         </div>
         
@@ -434,21 +405,15 @@
         </div>
         
         <div class="footer-column">
-            
-            
             <p style="font-size: 13px;color:#3b4248;">
                 Gambling should always be a part of entertainment, not a source of income. Play responsibly and enjoy the experience.
-</p>
+            </p>
         </div>
     </div>
 </footer>
 
 <p style="text-align: center; color: #3b4248;">Made by Coja (#coja0)</p>
 
-
-
-    <script src="chips-rewards.js"></script>
-    
-   
+<script src="chips-rewards.js"></script>
 </body>
 </html>

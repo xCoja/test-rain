@@ -1532,6 +1532,12 @@ body, html {
 
 
 
+.dollar-sign {
+  color: #2a75ff;
+  position: relative;
+  top: 2px; /* moves it DOWN */
+  font-weight: 700;
+}
 
 
 
