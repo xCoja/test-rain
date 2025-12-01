@@ -81,7 +81,7 @@ body, html {
 }
 
 .nav a.nav-red  { color: #ff2b2b; }   /* Points Store */
-.nav a.nav-blue { color: #2a4bdf; }   /* Shock Rewards */
+.nav a.nav-blue { color: #ffffff; }   /* Shock Rewards */
 
 /* Keep your underline for active item */
 .nav a.active::after {

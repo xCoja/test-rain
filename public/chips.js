@@ -1,4 +1,4 @@
-let currentEndTimeUTC = Date.UTC(2025, 6, 30, 0, 0, 0); 
+let currentEndTimeUTC = Date.UTC(2025, 7, 29, 0, 0, 0); 
 
 let period = 31 * 24 * 60 * 60 * 1000; 
 
@@ -45,7 +45,7 @@ function createBubbles() {
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}%`;
         bubble.style.animationDelay = `${Math.random() * 15}s`;
-        bubble.style.background = `rgb(42, 117, 255, ${Math.random() * 0.5 + 0.2})`;
+        bubble.style.background = `rgb(252, 251, 251, ${Math.random() * 0.5 + 0.2})`;
 
         bubblesContainer.appendChild(bubble);
     }

@@ -1,19 +1,33 @@
+
+const USE_FILLERS = true;
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://jonji-api.vercel.app/api/leaderboard/shock') // Updated URL
+    fetch('https://jonji-api.vercel.app/api/leaderboard/shock') 
         .then(response => response.json())
         .then(data => {
-            let leaderboard = data.players || []; // Ensure data exists
+            let leaderboard = data.players || []; 
 
             // Sort the leaderboard by wagered amount and acquireTime
             leaderboard.sort((a, b) => {
                 if (b.wagered !== a.wagered) {
-                    return b.wagered - a.wagered; // Sort by wagered amount
+                    return b.wagered - a.wagered; 
                 }
-                return a.acquireTime - b.acquireTime; // Secondary sort by acquireTime
+                return a.acquireTime - b.acquireTime; 
             });
 
             // Limit to top 10 users
             leaderboard = leaderboard.slice(0, 10);
+
+            
+            if (USE_FILLERS) {
+                leaderboard = leaderboard.map((user, index) => ({
+                    ...user,
+                    name: `_ ${index + 1}`,
+                    avatar: "chips.png",
+                    wagered: 0
+                    
+                }));
+            }
 
             const topThreeSection = document.querySelector(".top-three");
             const leaderboardBody = document.querySelector(".leaderboard-body");
@@ -26,23 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
             const topThreeUsers = leaderboard.slice(0, 3);
 
             // Display order for top 3
-            const displayOrder = [1, 0, 2]; // Adjust display order
+            const displayOrder = [1, 0, 2]; 
 
             displayOrder.forEach((rankIndex, displayIndex) => {
                 const user = topThreeUsers[rankIndex];
                 if (user) {
-                    // Replace censored avatar if necessary
+                    
                     if (user.avatar === "/assets/img/censored_avatar.png") {
                         user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
                     }
 
-                       if (user.avatar === "/shock.png") {
-                        user.avatar = "shock.png";
+                    if (user.avatar === "/shock.png") {
+                        user.avatar = "chips.png";
                     }
 
                     const topUserCard = document.createElement("div");
 
-                    // Adding CSS classes based on rank
+                    
                     const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
 
                     topUserCard.classList.add(
@@ -50,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                    // Format wagered amount with commas if greater than 1000
+                 
                     const formattedWagered = user.wagered >= 1000 
                         ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.wagered.toFixed(2);
 
-                    // Determine name format based on length
+                    
                     let formattedName = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
@@ -70,21 +84,21 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                         </div>
                         <div class="card-body">
-                         <div class="leader-name">
-                         ${formattedName}
-                                 </div>
+                            <div class="leader-name">
+                                ${formattedName}
+                            </div>
                             <div class="leader-wagered">WAGERED:</div>
-                           <div class="leader-amount">
-                              <img src="shockcoin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 2px; margin-right: -7px;">
-                               ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}<span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
-                           </div>
+                            <div class="leader-amount">
+                                $
+                                ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}
+                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
+                            </div>
 
-                              <div class="leader-points">
-                            <img src="shockcoin.png" style="max-width: 20px; vertical-align: middle; margin-bottom: 3px; margin-right: -8px;" />
-                         <span style="margin-right: 25px">${user.prize || 0}</span>
-                         </div>
-                       </div>
- 
+                            <div class="leader-points">
+                                $
+                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                            </div>
+                        </div>
                     `;
                     topThreeSection.appendChild(topUserCard);
                 }
@@ -95,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (user) {
                     
                     if (user.avatar === "/shock.png") {
-                        user.avatar = "shock.png"
+                        user.avatar = "chips.png"
                     }
 
                     const row = document.createElement("div");
@@ -103,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const rank = index + 4;
 
-                    // Format wagered amount with commas if greater than 1000
+                    
                     const formattedWageredRow = user.wagered >= 1000
                         ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                         : user.wagered.toFixed(2);
 
-                    // Determine name format based on length for rows
+                 
                     let formattedNameRow = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";

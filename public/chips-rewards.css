@@ -93,7 +93,7 @@
 }
 
 .nav a.nav-red  { color: #ff2b2b; }   /* Points Store */
-.nav a.nav-blue { color: #2a4bdf; }   /* Shock Rewards */
+.nav a.nav-blue { color: #ffffff; }   /* Shock Rewards */
 
 .txtt {
     background: linear-gradient(to right, #2a75ff, #014bd4);
@@ -135,7 +135,7 @@
     transform: translateX(-50%);
     width: 40%;
     height: 3px;
-    background: #014bd4;
+    background: #ffffff;
     border-radius: 2px;
     
 }
@@ -1248,7 +1248,7 @@ body {
     background:none; -webkit-text-fill-color: initial; color:#d89504;
   }
   .nav .nav-link.nav-red{ color:#ff2b2b !important; }
-  .nav .nav-link.nav-blue{ color:#2a4bdf !important; }
+  .nav .nav-link.nav-blue{ color:#ffffff !important; }
   .nav .nav-link.active::after{ display:none; } /* bez underline u dropdownu */
 }
 

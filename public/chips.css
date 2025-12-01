@@ -67,7 +67,7 @@ body, html {
 }
 
 .txtt {
-    background: linear-gradient(to right, #2a75ff, #014bd4);
+    background: linear-gradient(to right, #0065f2, #0253c5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -84,7 +84,7 @@ body, html {
 }
 
 .nav a.nav-red  { color: #ff2b2b; }   /* Points Store */
-.nav a.nav-blue { color: #2a4bdf; }   /* Shock Rewards */
+.nav a.nav-blue { color: #e9e9e9; }   /* Shock Rewards */
 
 /* Keep your underline for active item */
 .nav a.active::after {
@@ -105,7 +105,7 @@ body, html {
 }
 
 .gradient {
-    background: linear-gradient(to right, #2a75ff, #014bd4);
+    background: linear-gradient(to right, #0065f2, #0253c5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
@@ -212,6 +212,7 @@ body, html {
     background: linear-gradient(to right, #2a75ff, #014bd4);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 1000;
     
 }
 

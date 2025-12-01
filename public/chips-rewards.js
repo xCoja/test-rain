@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     b.style.width = `${size}px`;
     b.style.height = `${size}px`;
     b.style.left = `${left}%`;
-    b.style.background = `rgba(${42}, ${117}, ${255}, ${alpha})`; // use rgba()
+    b.style.background = `rgba(${250}, ${244}, ${255}, ${alpha})`; // use rgba()
 
     // independent delays/durations for each animation
     b.style.animationDuration = `${dur}s, 6s`;
