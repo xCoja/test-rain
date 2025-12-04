@@ -1,5 +1,5 @@
 
-const USE_FILLERS = true;
+const USE_FILLERS = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('https://jonji-api.vercel.app/api/leaderboard/chips') 
