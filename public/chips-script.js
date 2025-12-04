@@ -1,31 +1,28 @@
-
 const USE_FILLERS = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('https://jonji-api.vercel.app/api/leaderboard/chips') 
         .then(response => response.json())
         .then(data => {
-            let leaderboard = data.players || []; 
+            let leaderboard = data.players || [];
 
             // Sort the leaderboard by wagered amount and acquireTime
             leaderboard.sort((a, b) => {
                 if (b.wagered !== a.wagered) {
-                    return b.wagered - a.wagered; 
+                    return b.wagered - a.wagered;
                 }
-                return a.acquireTime - b.acquireTime; 
+                return a.acquireTime - b.acquireTime;
             });
 
             // Limit to top 10 users
             leaderboard = leaderboard.slice(0, 10);
 
-            
             if (USE_FILLERS) {
                 leaderboard = leaderboard.map((user, index) => ({
                     ...user,
                     name: `_ ${index + 1}`,
                     avatar: "chips.png",
                     wagered: 0
-                    
                 }));
             }
 
@@ -40,23 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const topThreeUsers = leaderboard.slice(0, 3);
 
             // Display order for top 3
-            const displayOrder = [1, 0, 2]; 
+            const displayOrder = [1, 0, 2];
 
             displayOrder.forEach((rankIndex, displayIndex) => {
                 const user = topThreeUsers[rankIndex];
                 if (user) {
-                    
+
                     if (user.avatar === "/assets/img/censored_avatar.png") {
                         user.avatar = "https://csgobig.com/assets/img/censored_avatar.png";
                     }
 
-                    if (user.avatar === "/chips.svg") {
+                    if (user.avatar === "/shock.png") {
                         user.avatar = "chips.png";
                     }
 
                     const topUserCard = document.createElement("div");
 
-                    
                     const rank = rankIndex === 0 ? 2 : rankIndex === 1 ? 1 : 3;
 
                     topUserCard.classList.add(
@@ -64,12 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         rank === 1 ? "first-card" : rank === 2 ? "second-card" : "third-card"
                     );
 
-                 
-                    const formattedWagered = user.wagered >= 1000 
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
+                    // ✅ FIXED: Always 2 decimals, no whitespace issues
+                    const formatted = Number(user.wagered).toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                    const [intPart, decPart] = formatted.split(".");
 
-                    
                     let formattedName = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
@@ -88,15 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ${formattedName}
                             </div>
                             <div class="leader-wagered">WAGERED:</div>
-                            <div class="leader-amount">
-                                $
-                                ${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[0] : '0'}
-                                <span style="opacity: .5; margin-right: 15px;">.${user.wagered ? Number(user.wagered).toLocaleString('en-US', { minimumFractionDigits: 2 }).split('.')[1] : '00'}</span>
-                            </div>
+
+                            <!-- ✅ No space before decimals -->
+                            <div class="leader-amount">$${intPart}<span style="opacity:.5;margin-right:15px;">.${decPart}</span></div>
 
                             <div class="leader-points">
-                                $
-                                <span style="margin-right: 25px">${user.prize || 0}</span>
+                                $<span style="margin-right:25px">${user.prize || 0}</span>
                             </div>
                         </div>
                     `;
@@ -107,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // For the rest (ranks 4-10)
             leaderboard.slice(3).forEach((user, index) => {
                 if (user) {
-                    
-                    if (user.avatar === "/chips.svg") {
-                        user.avatar = "chips.png"
+
+                    if (user.avatar === "/shock.png") {
+                        user.avatar = "chips.png";
                     }
 
                     const row = document.createElement("div");
@@ -117,12 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const rank = index + 4;
 
-                    
-                    const formattedWageredRow = user.wagered >= 1000
-                        ? user.wagered.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                        : user.wagered.toFixed(2);
+                    // ✅ FIXED formatting for bottom rows
+                    const formattedWageredRow = Number(user.wagered).toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                    const [rowInt, rowDec] = formattedWageredRow.split(".");
 
-                 
                     let formattedNameRow = user.name.length > 3
                         ? user.name.slice(0, 3) + "****"
                         : user.name.slice(0, 1) + "****";
@@ -136,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="cell">
                             <div class="wagered">
                                 <img src="shockcoin.png" style="max-width:17px" />
-                                ${formattedWageredRow.split('.')[0]}<span style="opacity: .5;">.${formattedWageredRow.split('.')[1]}</span>
+                                ${rowInt}<span style="opacity:.5">.${rowDec}</span>
                             </div>
                         </div>
                         <div class="cell">
